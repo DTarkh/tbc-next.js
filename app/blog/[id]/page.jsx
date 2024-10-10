@@ -6,7 +6,7 @@ const Page = async ({ params: { id } }) => {
 
   return (
     <div className="singleBlog-container">
-      <h1>{post.title}</h1>
+      <h1 key={post.id}>{post.title}</h1>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 // Blog.js
 import React from "react";
 import "./Blog.css"
+import Link from "next/link";
 
 const Blog = ({ blog }) => {
   return (
@@ -17,6 +18,7 @@ const Blog = ({ blog }) => {
         <div className="blog-views">
           <span>👁️ {blog.views} views</span>
         </div>
+        <Link href="/"><button>fefsfr</button></Link>
       </div>
     </div>
   );

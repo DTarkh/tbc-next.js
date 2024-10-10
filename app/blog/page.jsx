@@ -9,7 +9,7 @@ const BlogPage = async () => {
     <div>
         <Main>
       {posts.map((post) => (
-        <Blog blog={post} />
+        <Blog blog={post} key={post.id} />
       ))}
 
         </Main>

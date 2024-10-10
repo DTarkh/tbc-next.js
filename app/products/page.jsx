@@ -9,7 +9,7 @@ const ProductsPage = async () => {
     <div className="products-container">
     
       {products.map((product) => (
-        <ProductCard  product={product} />
+        <ProductCard  product={product} key={product.id}/>
       ))}
       
     
