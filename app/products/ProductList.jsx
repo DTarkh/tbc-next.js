@@ -3,6 +3,9 @@ import "./ProductList.css";
 const ProductCard = ({ product }) => {
   return (
     <div className="ProductCard" key={product.id}>
+       <div className="card-image">
+        <img src={product.thumbnail} alt={"image"} />
+      </div>
       <h2 className="ProductCard-title">{product.title}</h2>
       <p className="ProductCard-description">{product.description}</p>
       <p className="ProductCard-category">Category: {product.category}</p>

@@ -1,25 +1,36 @@
+
+
 .ProductCard {
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
-  width: 300px;
+  max-width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #fff;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-.ProductCard:hover{
-    transition: box-shadow 0.3s, transform 0.3s ease-in-out;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    transform: scale(1.1);
-    cursor: pointer;
+
+.ProductCard:hover {
+  transform: scale(1.05);
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 200px;
+  margin-bottom: 15px;
 }
 
 .ProductCard-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #555;
+  color: rgb(51, 51, 51);
 }
 
 .ProductCard-description {
@@ -28,51 +39,18 @@
   margin-bottom: 15px;
 }
 
-.ProductCard-category,
-.ProductCard-price,
-.ProductCard-discount,
-.ProductCard-rating,
-.ProductCard-stock,
-.ProductCard-brand,
-.ProductCard-dimensions,
-.ProductCard-warranty,
-.ProductCard-shipping,
-.ProductCard-availability {
+.ProductCard-category {
   font-size: 0.9rem;
+  color: #888;
   margin-bottom: 10px;
-  color: #555;
-}
-
-
-.ProductCard-price {
-  color: #2ecc71;
-  font-weight: bold;
-}
-
-.ProductCard-discount {
-  color: #e74c3c;
-}
-
-.ProductCard-rating {
-  color: #f1c40f;
-}
-
-.ProductCard-availability {
-  font-weight: bold;
-}
-
-.in-stock {
-  color: #27ae60;
-}
-
-.out-of-stock {
-  color: #e74c3c;
+  color: rgb(51, 51, 51);
 }
 
 .products-container {
-  background-color: #2ecc71;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 7vh;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    padding-top: 7vh;
+    background-color: rgb(183, 131, 67);
+    color: rgb(51, 51, 51);
 }
