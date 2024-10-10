@@ -1,0 +1,9 @@
+.main-container{
+    background-color: bisque;
+    height:85vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
