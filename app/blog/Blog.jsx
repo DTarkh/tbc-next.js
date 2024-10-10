@@ -18,8 +18,8 @@ const Blog = ({ blog }) => {
         <div className="blog-views">
           <span>👁️ {blog.views} views</span>
         </div>
-        <Link href="/"><button>fefsfr</button></Link>
       </div>
+        <Link href={`/blog/${blog.id}`}><button className="blog-button">View</button></Link>
     </div>
   );
 };
