@@ -1,4 +1,5 @@
 import React from 'react'
+import Main from '../Wrap/Main'
 
 const ProductsPage = async () => {
 
@@ -7,8 +8,10 @@ const ProductsPage = async () => {
 
   return (
     <div>
-        <h1>Products</h1>
-        {products.map((product) =>(<p>{product.title}</p>))}
+        <Main>
+            <h1>Products</h1>
+            {products.map((product) =>(<p>{product.title}</p>))}
+        </Main>
     </div>
   )
 }
