@@ -1,4 +1,4 @@
-import "../ProductList.css";
+import "./SingleProduct.css";
 
 const SingleProduct = ({ product }) => {
   return (
