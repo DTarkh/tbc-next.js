@@ -8,7 +8,7 @@
   width: 200px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
-  background-color: #fff;
+  background-color: #F9F9F9;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
     display: flex;
     justify-content: center;
     padding-top: 7vh;
-    background-color: rgb(183, 131, 67);
+    background-color: #fff;
     color: rgb(51, 51, 51);
 }
 
@@ -85,12 +85,3 @@
   font-size: 12px;  
 }
 
-.singleProduct-container{
-  padding-top: 7vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height:100vh;
-  background-color: burlywood;
-}
