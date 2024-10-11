@@ -1,8 +1,7 @@
 /* Blog.css */
 .blog-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 700px;
+    padding: 8px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #F9F9F9;
@@ -72,10 +71,11 @@
   }
 
   .blog-button {
-    background-color: #a3a7ac; 
+    background-color: #787373; 
     transition: background-color 0.3s ease, transform 0.2s ease; 
     font-size: 16px; 
     padding: 5px;
+    color: #333;
   }
   
   .blog-button:hover {
