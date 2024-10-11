@@ -4,8 +4,8 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
-  width: 200px;
+  margin: 5px;
+  width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
   background-color: #F9F9F9;
@@ -59,9 +59,11 @@
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    padding-top: 7vh;
     background-color: #fff;
     color: rgb(51, 51, 51);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
@@ -85,3 +87,49 @@
   font-size: 12px;  
 }
 
+.products-header{
+  background-color: #FEF4E4;
+  height: 20vh;
+  width: 96%;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+
+}
+
+.products-headertext{
+  color: #F16824;
+  font-size: 48px;
+  font-weight: 700;
+  padding-left: 40px;
+
+}
+
+.products-sortcontainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+}
+
+.products-divider{
+  height: 7px;
+  background-color: #D5DBDB;
+  width: 96%;
+  border-radius: 1px;
+  margin-bottom: 15px;
+
+}
+
+.products-sortcontainer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.products-sortcontainer li {
+  display: flex;
+  align-items: center;
+}
