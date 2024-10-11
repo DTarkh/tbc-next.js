@@ -1,22 +1,22 @@
+import Link from "next/link";
 import "./ProductList.css";
 
 const ProductCard = ({ product }) => {
   return (
     <div className="ProductCard" key={product.id}>
-       <div className="card-image">
+      <div className="card-image">
         <img src={product.thumbnail} alt={"image"} />
       </div>
-      <h2 className="ProductCard-title">{product.title}</h2>
-      <p className="ProductCard-description">{product.description}</p>
-      <p className="ProductCard-category">Category: {product.category}</p>
-      <p className="ProductCard-price">Price: ${product.price}</p>
-      <p className="ProductCard-discount">Discount: {product.discountPercentage}%</p>
-      <p className="ProductCard-rating">Rating: {product.rating}/5</p>
-      <p className="ProductCard-stock">Stock: {product.stock} units</p>
-      <p className="ProductCard-brand">Brand: {product.brand}</p>
-      
-      <p className="ProductCard-warranty">Warranty: {product.warrantyInformation}</p>
-      <p className="ProductCard-shipping">Shipping: {product.shippingInformation}</p>
+
+      <p className="ProductCard-discount">
+        {product.discountPercentage}% off
+        <span className="limited-deal">Limited Deal</span>
+      </p>
+      <Link href={`/products/${product.id}`}>
+        <h2 className="ProductCard-title">{product.title}</h2>
+      </Link>
+      <p className="ProductCard-rating">Rating: {product.rating} </p>
+      <span className="ProductCard-price">Price: ${product.price}</span>
     </div>
   );
 };
