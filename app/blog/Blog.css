@@ -72,9 +72,10 @@
   }
 
   .blog-button {
-    background-color: #0070f3; 
+    background-color: #a3a7ac; 
     transition: background-color 0.3s ease, transform 0.2s ease; 
-    font-size: 16px;         
+    font-size: 16px; 
+    padding: 5px;
   }
   
   .blog-button:hover {
