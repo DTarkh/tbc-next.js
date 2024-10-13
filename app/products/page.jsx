@@ -29,15 +29,6 @@ const ProductsPage = () => {
             </select>
           </li>
           <li>
-            Filter by:
-            <select>
-              <option value="all">All Categories</option>
-              <option value="electronics">Electronics</option>
-              <option value="clothing">Clothing</option>
-              <option value="home">Home</option>
-            </select>
-          </li>
-          <li>
             <input type="text" placeholder="Search products..." />
           </li>
         </ul>
