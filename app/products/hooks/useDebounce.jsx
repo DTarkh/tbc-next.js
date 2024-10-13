@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -11,9 +11,9 @@ const useDebounce = (value, delay) => {
     }, delay || 500);
 
     return () => {
-        clearTimeout(timer);
+      clearTimeout(timer);
     };
-  },[value, delay]);
+  }, [value, delay]);
 
   return debouncedValue;
 };

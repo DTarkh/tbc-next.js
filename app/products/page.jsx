@@ -7,7 +7,8 @@ import useDebounce from "./hooks/useDebounce";
 const ProductsPage = () => {
   const [sortValues, setSortValues] = useState({ sortBy: 'price', order: 'asc', input: "" });
   const [input, setInput] = useState("")
-  const { products } = useProducts(sortValues.sortBy, sortValues.order, input);
+  const debouncedValue = useDebounce(input)
+  const { products } = useProducts(sortValues.sortBy, sortValues.order, debouncedValue);
 
   const handleSelectedValues = (category) => {
     const [sortBy, order] = category.split('-')
@@ -16,11 +17,10 @@ const ProductsPage = () => {
 
   
   
+  
   const handleSearch = (value) => {
-    
-    const debouncedValue = useDebounce(value, 5000)
-
-    setInput(debouncedValue)
+  
+    setInput(value)
   }
 
   return (
