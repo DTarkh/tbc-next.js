@@ -4,9 +4,9 @@ import ProductCard from "./ProductList";
 import useProducts from "./useProducts";
 
 const ProductsPage = () => {
-  const [sortValues, setSortValues] = useState({ sortBy: 'title', order: 'asc' });
+  const [sortValues, setSortValues] = useState({ sortBy: 'title', order: 'asc', input: "" });
   const [input, setInput] = useState("")
-  const { products } = useProducts(sortValues.sortBy, sortValues.order);
+  const { products } = useProducts(sortValues.sortBy, sortValues.order, input);
 
   const handleSelectedValues = (category) => {
     const [sortBy, order] = category.split('-')
