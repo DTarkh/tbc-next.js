@@ -1,10 +1,16 @@
 'use client'
-
+import { useState } from "react";
 import ProductCard from "./ProductList";
 import useProducts from "./useProducts";
 
 const ProductsPage = () => {
-  const { products } = useProducts();
+  const [sortValues, setSortValues] = useState({ sortBy: 'title', order: 'asc' });
+  const { products } = useProducts(sortValues.sortBy, sortValues.order);
+
+  const handleSelectedValues = (category) => {
+    const [sortBy, order] = category.split('-')
+    setSortValues({sortBy, order})
+  }
 
   return (
     <div className="products-container">
@@ -15,7 +21,7 @@ const ProductsPage = () => {
         <ul>
           <li>
             Sort by:
-            <select>
+            <select onChange={(event) => handleSelectedValues(event.target.value)}>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
               <option value="rating-asc">Rating: Low to High</option>
@@ -38,7 +44,7 @@ const ProductsPage = () => {
       </div>
       <div className="products-divider"></div>
       {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
+        <ProductCard product={product} key={product.id}/>
       ))}
     </div>
   );
