@@ -5,11 +5,18 @@ import useProducts from "./useProducts";
 
 const ProductsPage = () => {
   const [sortValues, setSortValues] = useState({ sortBy: 'title', order: 'asc' });
+  const [input, setInput] = useState("")
   const { products } = useProducts(sortValues.sortBy, sortValues.order);
 
   const handleSelectedValues = (category) => {
     const [sortBy, order] = category.split('-')
     setSortValues({sortBy, order})
+  }
+
+  const handleSearch = (value) => {
+    setInput(value)
+    console.log(value)
+
   }
 
   return (
@@ -29,7 +36,7 @@ const ProductsPage = () => {
             </select>
           </li>
           <li>
-            <input type="text" placeholder="Search products..." />
+            <input type="text" placeholder="Search products..." onChange={(event) => handleSearch(event.target.value)} />
           </li>
         </ul>
       </div>
