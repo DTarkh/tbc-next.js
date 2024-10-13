@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ProductCard from "./ProductList";
 import useProducts from "./hooks/useProducts";
+import useDebounce from "./hooks/useDebounce";
 
 const ProductsPage = () => {
   const [sortValues, setSortValues] = useState({ sortBy: 'price', order: 'asc', input: "" });
@@ -13,8 +14,13 @@ const ProductsPage = () => {
     setSortValues({sortBy, order})
   }
 
+  
+  
   const handleSearch = (value) => {
-    setInput(value)
+    
+    const debouncedValue = useDebounce(value, 5000)
+
+    setInput(debouncedValue)
   }
 
   return (
