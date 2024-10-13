@@ -1,9 +1,10 @@
-import React from "react";
-import ProductCard from "./ProductList";
+'use client'
 
-const ProductsPage = async () => {
-  const res = await fetch("https://dummyjson.com/products#products-all");
-  const { products } = await res.json();
+import ProductCard from "./ProductList";
+import useProducts from "./useProducts";
+
+const ProductsPage = () => {
+  const { products } = useProducts();
 
   return (
     <div className="products-container">
@@ -14,7 +15,7 @@ const ProductsPage = async () => {
         <ul>
           <li>
             Sort by:
-            <select >
+            <select>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
               <option value="rating-asc">Rating: Low to High</option>
@@ -23,7 +24,7 @@ const ProductsPage = async () => {
           </li>
           <li>
             Filter by:
-            <select >
+            <select>
               <option value="all">All Categories</option>
               <option value="electronics">Electronics</option>
               <option value="clothing">Clothing</option>
@@ -31,10 +32,7 @@ const ProductsPage = async () => {
             </select>
           </li>
           <li>
-            <input
-              type="text"
-              placeholder="Search products..."
-            />
+            <input type="text" placeholder="Search products..." />
           </li>
         </ul>
       </div>
