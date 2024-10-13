@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const useProducts = (sortBy = "title", order = "asc", input = "") => {
+const useProducts = (sortBy, order, input) => {
   const [products, setProducts] = useState([]);
 
 

@@ -1,10 +1,10 @@
 'use client'
 import { useState } from "react";
 import ProductCard from "./ProductList";
-import useProducts from "./useProducts";
+import useProducts from "./hooks/useProducts";
 
 const ProductsPage = () => {
-  const [sortValues, setSortValues] = useState({ sortBy: 'title', order: 'asc', input: "" });
+  const [sortValues, setSortValues] = useState({ sortBy: 'price', order: 'asc', input: "" });
   const [input, setInput] = useState("")
   const { products } = useProducts(sortValues.sortBy, sortValues.order, input);
 
@@ -15,8 +15,6 @@ const ProductsPage = () => {
 
   const handleSearch = (value) => {
     setInput(value)
-    console.log(value)
-
   }
 
   return (
