@@ -29,8 +29,8 @@ const ProductsPage = ({ searchParams }) => {
             </button>
             <button className="products-btn">
               {" "}
-              <Link href="/products?sortBy=rating&order=asc">
-                Rating: Low to High
+              <Link href="/products?sortBy=discountPercentage&order=desc">
+                Discount: High to Low
               </Link>
             </button>
             <button className="products-btn">
