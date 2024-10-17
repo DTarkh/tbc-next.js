@@ -1,10 +1,13 @@
-const fetchProducts = async (input) => {
-  const response = await fetch(
-    `https://dummyjson.com/products/search?q=${input}`
-  );
-  const { products } = response.json();
 
-  return { products };
+
+
+
+
+const fetchProducts = async () => {
+  const response = await fetch(`https://dummyjson.com/products`);
+  const data = await response.json();
+
+  return data.products;
 };
 
 export default fetchProducts;

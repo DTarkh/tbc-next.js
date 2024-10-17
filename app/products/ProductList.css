@@ -133,3 +133,9 @@
   display: flex;
   align-items: center;
 }
+
+.ProductList{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
