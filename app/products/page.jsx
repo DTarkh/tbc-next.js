@@ -1,9 +1,10 @@
 import ProductCard from "./ProductList";
 import Link from "next/link";
+import Search from "./Search"
 
 const ProductsPage = ({ searchParams }) => {
   const { sortBy, order } = searchParams;
-  console.log(sortBy, order);
+  
 
   return (
     <div className="products-container">
@@ -40,7 +41,7 @@ const ProductsPage = ({ searchParams }) => {
             </button>
           </li>
           <li>
-            {/* <input type="text" placeholder="Search products..." onChange={(event) => handleSearch(event.target.value)} /> */}
+            <Search />
           </li>
         </ul>
       </div>

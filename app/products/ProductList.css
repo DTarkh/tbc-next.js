@@ -159,3 +159,22 @@
   background-color: #45a049;
   transform: scale(1.05); 
 }
+
+
+.products-search{
+  width: 100%; 
+  max-width: 400px; 
+  padding: 12px 20px; 
+  font-size: 16px; 
+  border: 2px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  outline: none;
+}
+
+
+.products-search:focus {
+  border-color: #4CAF50; /* Change border to green on focus */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Add glow effect on focus */
+}

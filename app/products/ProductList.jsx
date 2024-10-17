@@ -2,6 +2,7 @@ import Link from "next/link";
 import "./ProductList.css";
 import fetchProducts from "./hooks/useProducts";
 
+
 const ProductCard = async ({sortBy, sortOrder}) => {
 
   const products = await fetchProducts(sortBy, sortOrder);
