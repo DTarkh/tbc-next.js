@@ -1,30 +1,10 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-const useProducts = (sortBy, order, input) => {
-  const [products, setProducts] = useState([]);
-
-
-if (input){
-
-    useEffect(() => {
-        fetch(`https://dummyjson.com/products/search?q=${input}`)
-          .then((response) => response.json())
-          .then((data) => setProducts(data.products));
-      }, [input]);
-    
-      return { products };
-
-}
-
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products?sortBy=${sortBy}&order=${order}`)
-      .then((response) => response.json())
-      .then((data) => setProducts(data.products));
-  }, [sortBy, order]);
+const fetchProducts = async (input) => {
+  const response = await fetch(
+    `https://dummyjson.com/products/search?q=${input}`
+  );
+  const { products } = response.json();
 
   return { products };
 };
 
-export default useProducts;
+export default fetchProducts;
