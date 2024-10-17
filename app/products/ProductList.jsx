@@ -2,9 +2,9 @@ import Link from "next/link";
 import "./ProductList.css";
 import fetchProducts from "./hooks/useProducts";
 
-const ProductCard = async () => {
+const ProductCard = async ({sortBy, sortOrder}) => {
 
-  const products = await fetchProducts();
+  const products = await fetchProducts(sortBy, sortOrder);
 
   return (
     <div className="ProductList">
