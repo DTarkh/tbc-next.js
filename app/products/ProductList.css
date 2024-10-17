@@ -139,3 +139,23 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.products-btn {
+  background-color: #4CAF50; 
+  border: none;
+  color: white; 
+  padding: 12px 24px; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block;
+  font-size: 16px; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  cursor: pointer; 
+  margin-left: 5px;
+}
+
+
+.products-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05); 
+}

@@ -1,23 +1,13 @@
-'use client'
-import { useState } from "react";
+
+
 import ProductCard from "./ProductList";
+import Link from "next/link";
 
 
 
-const ProductsPage = () => {
-  // const [sortValues, setSortValues] = useState({ sortBy: 'price', order: 'asc', input: "" });
-  // const [input, setInput] = useState("")
-
-
-  // const handleSelectedValues = (category) => {
-  //   const [sortBy, order] = category.split('-')
-  //   setSortValues({sortBy, order})
-  // }
-
-  
-  // const handleSearch = (value) => {
-  //   setInput(value)
-  // }
+const ProductsPage = ({searchParams}) => {
+  const { sortBy, order } = searchParams;
+  console.log(sortBy, order)
 
   return (
     <div className="products-container">
@@ -28,12 +18,10 @@ const ProductsPage = () => {
         <ul>
           <li>
             Sort by:
-            {/* <select onChange={(event) => handleSelectedValues(event.target.value)}>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="rating-asc">Rating: Low to High</option>
-              <option value="rating-desc">Rating: High to Low</option>
-            </select> */}
+            <button className="products-btn"> <Link href="/products?sortBy=price&order=asc">Price: Low to High</Link></button>
+            <button className="products-btn"> <Link href="/products?sortBy=price&order=desc">Price: High to Low</Link></button>
+            <button className="products-btn"> <Link href="/products?sortBy=rating&order=asc">Rating: Low to High</Link></button>
+            <button className="products-btn"> <Link href="/products?sortBy=rating&order=desc">Rating: High to Low</Link></button>
           </li>
           <li>
             {/* <input type="text" placeholder="Search products..." onChange={(event) => handleSearch(event.target.value)} /> */}
