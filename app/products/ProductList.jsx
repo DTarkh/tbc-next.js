@@ -3,9 +3,9 @@ import "./ProductList.css";
 import fetchProducts from "./hooks/useProducts";
 
 
-const ProductCard = async ({sortBy, sortOrder}) => {
+const ProductCard = async ({sortBy, sortOrder, search}) => {
 
-  const products = await fetchProducts(sortBy, sortOrder);
+  const products = await fetchProducts(sortBy, sortOrder, search);
 
   return (
     <div className="ProductList">

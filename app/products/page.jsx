@@ -3,7 +3,11 @@ import Link from "next/link";
 import Search from "./Search"
 
 const ProductsPage = ({ searchParams }) => {
-  const { sortBy, order } = searchParams;
+  const { sortBy, order, search } = searchParams;
+  console.log("searchparams", searchParams)
+
+
+  
   
 
   return (
@@ -47,7 +51,7 @@ const ProductsPage = ({ searchParams }) => {
       </div>
       <div className="products-divider"></div>
 
-      <ProductCard sortBy={sortBy} sortOrder={order}/>
+      <ProductCard sortBy={sortBy} sortOrder={order} search={search}/>
     </div>
   );
 };
