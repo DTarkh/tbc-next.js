@@ -1,11 +1,10 @@
 .main-container{
-    padding-top:7vh;
     background-color:#fff;
     width:100%;
     display: flex;
     flex-direction: column;
-    flex: 1 1 calc(50% - 20px);
     align-items: center;
     gap:5px;
+    justify-content: center;
 
 }
