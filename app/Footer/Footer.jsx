@@ -6,39 +6,35 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-column">
-          <h3 className="footer-title">YourStore</h3>
-          <p className="footer-description">
-            Your go-to online shop for high-quality products. Delivering excellence and customer satisfaction.
-          </p>
+        <div className="footer-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
+          <a href="/products">Products</a>
         </div>
 
-        <div className="footer-column">
-          <h4 className="footer-subtitle">Quick Links</h4>
-          <ul className="footer-links">
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div className="footer-column">
-          <h4 className="footer-subtitle">Contact Us</h4>
-          <p>Email: <a href="mailto:support@yourstore.com">support@yourstore.com</a></p>
-          <p>Phone: +123 456 789</p>
-
-          <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <FaFacebookF />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <FaInstagram />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <FaLinkedinIn />
-            </a>
-          </div>
+        <div className="social-links">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF className="social-icon" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="social-icon" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn className="social-icon" />
+          </a>
         </div>
       </div>
 
