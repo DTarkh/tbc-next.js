@@ -6,6 +6,7 @@ import Search from "./Search";
 import useProducts2 from "./hooks/useProducts2";
 import { useState } from "react";
 import EditWindow from "../Components/EditWindow";
+import Spinner from "../Components/Spinner"
 
 const ProductsPage = ({ searchParams }) => {
   const { sortBy, order, search } = searchParams;
@@ -14,10 +15,13 @@ const ProductsPage = ({ searchParams }) => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [active, setActive] = useState(false)
   console.log(active)
-
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <div className="products-container">
+      <Spinner/>;
+
+    </div>
   }
+
   return (
     <div className="products-container">
     {active && <EditWindow title={currentProduct.title}
