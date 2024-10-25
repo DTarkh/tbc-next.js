@@ -5,16 +5,13 @@ import "./Navbar.css";
 import useTheme from "../Components/hooks/useTheme"
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
 
   // read from localstorageconst : theme = localStorage.getItem("theme");
 
   // if we want to save to localstorage in has to be jsonstirigified.
 
-  const handleToggle = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-    localStorage.setItem("theme", theme);
-  };
+  
 
   return (
     <div
@@ -53,7 +50,7 @@ const Navbar = () => {
           <li>Products</li>
         </Link>
 
-        <button className="nav-btn" onClick={handleToggle}>
+        <button className="nav-btn" onClick={toggleTheme}>
           Toggle to {theme === "dark" ? "light" : "dark"}
         </button>
       </ul>
@@ -62,3 +59,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

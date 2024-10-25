@@ -17,7 +17,14 @@ const useToggle = () => {
         }
       });
 
-  return {theme, setTheme}
+
+
+      const toggleTheme = () => {
+        setTheme((prevTheme) => prevTheme === 'dark' ? 'light' : 'dark');
+        localStorage.setItem("theme", theme === 'dark' ? 'light' : 'dark');
+      }
+
+  return {theme, toggleTheme}
 }
 
-export default useToggle
+export default useToggle;
