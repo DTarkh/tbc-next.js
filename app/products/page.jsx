@@ -6,41 +6,56 @@ import Search from "./Search";
 import useProducts2 from "./hooks/useProducts2";
 import { useState } from "react";
 import EditWindow from "../Components/EditWindow";
-import Spinner from "../Components/Spinner"
+import Spinner from "../Components/Spinner";
+import AddProduct from "../Components/AddProduct";
 
 const ProductsPage = ({ searchParams }) => {
   const { sortBy, order, search } = searchParams;
 
   const { products, setProducts, loading } = useProducts2();
   const [currentProduct, setCurrentProduct] = useState([]);
-  const [active, setActive] = useState(false)
-  console.log(active)
-  if (loading) {
-    return <div className="products-container">
-      <div className="products-header">
-        <h1 className="products-headertext">Products</h1>
-      </div>
-      <Spinner/>;
+  const [active, setActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-    </div>
+  const onAdd = () => {
+    setIsActive(true);
+  };
+
+  if (loading) {
+    return (
+      <div className="products-container">
+        <div className="products-header">
+          <h1 className="products-headertext">Products</h1>
+        </div>
+        <Spinner />;
+      </div>
+    );
   }
 
   return (
     <div className="products-container">
-    {active && <EditWindow currentProduct={currentProduct}
-    setActive={setActive}
-    products={products}
-    setProducts={setProducts}
-          
-        />}
-  
+      {active && (
+        <EditWindow
+          currentProduct={currentProduct}
+          setActive={setActive}
+          products={products}
+          setProducts={setProducts}
+        />
+      )}
+
+      {isActive && <AddProduct setIsActive={setIsActive} 
+      products={products}
+      setProducts={setProducts}/>}
+
       <div className="products-header">
         <h1 className="products-headertext">Products</h1>
       </div>
       <div className="products-sortcontainer">
         <ul>
+          <button className="products-addbtn" onClick={() => onAdd()}>
+            Add New Product
+          </button>
           <li>
-            Sort by:
             <button className="products-btn">
               {" "}
               <Link href="/products?sortBy=price&order=asc">
