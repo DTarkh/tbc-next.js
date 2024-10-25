@@ -1,5 +1,13 @@
 
   
+
+  .loading-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60vh;
+  }
   /* Spinner styling */
   .loading-spinner {
     border: 8px solid #f3f3f3; /* Light gray */
