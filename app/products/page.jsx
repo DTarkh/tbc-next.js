@@ -27,9 +27,11 @@ const ProductsPage = ({ searchParams }) => {
 
   return (
     <div className="products-container">
-    {active && <EditWindow title={currentProduct.title}
-          rating={currentProduct.rating}
-          price={currentProduct.price}
+    {active && <EditWindow currentProduct={currentProduct}
+    setActive={setActive}
+    products={products}
+    setProducts={setProducts}
+          
         />}
   
       <div className="products-header">
