@@ -178,3 +178,43 @@
   border-color: #4CAF50; /* Change border to green on focus */
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Add glow effect on focus */
 }
+
+.ProductCard-button{
+  background-color: #ca4456; 
+  border: none;
+  color: white; 
+  padding: 10px 20px; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block;
+  font-size: 14px; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  cursor: pointer; 
+  margin-left: 5px;
+}
+
+.ProductCard-button:hover {
+  background-color: #b3285d; 
+  transform: scale(1.05); 
+}
+
+.ProductCard-button-update{
+  background-color: #d4b92f; 
+  border: none;
+  color: white; 
+  padding: 10px 20px; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block;
+  font-size: 14px; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  cursor: pointer; 
+  margin-left: 5px;
+}
+
+.ProductCard-button-update:hover {
+  background-color: #cad153; 
+  transform: scale(1.05); 
+}
