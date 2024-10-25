@@ -1,24 +1,11 @@
-"use client";
+'use client'
 
 import Link from "next/link";
 import "./Navbar.css";
-import { useState } from "react";
+import useTheme from "../Components/hooks/useTheme"
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(() => {
-    try {
-      const theme = localStorage.getItem("theme");
-      if (theme) {
-        return theme;
-      } else {
-        localStorage.getItem("theme", "light");
-        return "light";
-      }
-    } catch (error) {
-      console.log("error", error);
-      return "light";
-    }
-  });
+  const { theme, setTheme } = useTheme()
 
   // read from localstorageconst : theme = localStorage.getItem("theme");
 
@@ -27,8 +14,6 @@ const Navbar = () => {
   const handleToggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
     localStorage.setItem("theme", theme);
-    // if we want to save to localstorage in jsonstirigified.
-    // localStorage.setItem("theme", JSON.stringify(theme));
   };
 
   return (
@@ -42,7 +27,7 @@ const Navbar = () => {
           href="/"
           style={{ color: theme === "dark" ? "white" : "black" }}
         >
-          <li className="i">Home</li>
+          <li>Home</li>
         </Link>
         <Link
           className="nav-link"
