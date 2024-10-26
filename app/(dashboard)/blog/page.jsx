@@ -1,5 +1,5 @@
 import Blog from "./blog";
-import Main from "../Wrap/Main";
+
 
 const BlogPage = async () => {
   const res = await fetch("https://dummyjson.com/posts");
@@ -7,12 +7,11 @@ const BlogPage = async () => {
 
   return (
     <div>
-        <Main>
+        
       {posts.map((post) => (
         <Blog blog={post} key={post.id} />
       ))}
 
-        </Main>
     </div>
   );
 };

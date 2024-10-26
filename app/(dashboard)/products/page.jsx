@@ -5,9 +5,9 @@ import Link from "next/link";
 import Search from "./Search";
 import useProducts2 from "./hooks/useProducts2";
 import { useState } from "react";
-import EditWindow from "../Components/EditWindow";
-import Spinner from "../Components/Spinner";
-import AddProduct from "../Components/AddProduct";
+import EditWindow from "../../Components/EditWindow";
+import Spinner from "../../Components/Spinner";
+import AddProduct from "../../Components/AddProduct";
 
 const ProductsPage = ({ searchParams }) => {
   const { sortBy, order, search } = searchParams;
@@ -16,7 +16,7 @@ const ProductsPage = ({ searchParams }) => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [active, setActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  console.log(products)
+  console.log(products);
 
   const onAdd = () => {
     setIsActive(true);
@@ -44,9 +44,13 @@ const ProductsPage = ({ searchParams }) => {
         />
       )}
 
-      {isActive && <AddProduct setIsActive={setIsActive} 
-      products={products}
-      setProducts={setProducts}/>}
+      {isActive && (
+        <AddProduct
+          setIsActive={setIsActive}
+          products={products}
+          setProducts={setProducts}
+        />
+      )}
 
       <div className="products-header">
         <h1 className="products-headertext">Products</h1>
