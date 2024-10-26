@@ -39,7 +39,7 @@ const ProductCard = ({
           </Link>
           <p className="ProductCard-rating">Rating: {product.rating}</p>
           <span className="ProductCard-price">Price: ${product.price}</span>
-          <div>
+          <div className="ProductCard-btns">
             <button
               className="ProductCard-button-update"
               onClick={() => onUpdate(product.id)}

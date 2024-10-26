@@ -49,6 +49,14 @@ const Navbar = () => {
           {" "}
           <li>Products</li>
         </Link>
+        <Link
+          className="nav-link"
+          href="/profile"
+          style={{ color: theme === "dark" ? "white" : "black" }}
+        >
+          {" "}
+          <li>Profile</li>
+        </Link>
 
         <button className="nav-btn" onClick={toggleTheme}>
           Toggle to {theme === "dark" ? "light" : "dark"}

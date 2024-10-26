@@ -233,3 +233,8 @@
 .products-addbtn:hover {
   background-color: #b0b0b0; /* Slightly darker silver on hover */
 }
+
+.ProductCard-btns{
+  display: flex;
+  justify-content: center;
+}
