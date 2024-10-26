@@ -2,21 +2,26 @@ import Link from "next/link";
 import "./ProductList.css";
 // import fetchProducts from "./hooks/useProducts";
 
-
-const ProductCard = ({sortBy, sortOrder, search, products, setProducts, setCurrentProduct, setActive}) => {
-
+const ProductCard = ({
+  sortBy,
+  sortOrder,
+  search,
+  products,
+  setProducts,
+  setCurrentProduct,
+  setActive,
+}) => {
   // const products = await fetchProducts(sortBy, sortOrder, search);
-  
-const onDelete = (id) =>{
-  setProducts(products.filter((product) => product.id!== id));
-}
 
-const onUpdate = (id) =>{
-  setCurrentProduct(products.find((product) => product.id === id))
-  console.log("Update", id);
-  setActive(true);
-}
+  const onDelete = (id) => {
+    setProducts(products.filter((product) => product.id !== id));
+  };
 
+  const onUpdate = (id) => {
+    setCurrentProduct(products.find((product) => product.id === id));
+    console.log("Update", id);
+    setActive(true);
+  };
 
   return (
     <div className="ProductList">
@@ -35,11 +40,19 @@ const onUpdate = (id) =>{
           <p className="ProductCard-rating">Rating: {product.rating}</p>
           <span className="ProductCard-price">Price: ${product.price}</span>
           <div>
-          <button className="ProductCard-button" onClick={() => onDelete(product.id)}>Delete</button>
-          <button className="ProductCard-button-update" onClick={() => onUpdate(product.id)}>Update</button>
-
+            <button
+              className="ProductCard-button-update"
+              onClick={() => onUpdate(product.id)}
+            >
+              Update
+            </button>
+            <button
+              className="ProductCard-button"
+              onClick={() => onDelete(product.id)}
+            >
+              Delete
+            </button>
           </div>
-          
         </div>
       ))}
     </div>

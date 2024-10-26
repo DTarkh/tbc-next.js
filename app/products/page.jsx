@@ -16,6 +16,7 @@ const ProductsPage = ({ searchParams }) => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [active, setActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  console.log(products)
 
   const onAdd = () => {
     setIsActive(true);
@@ -102,34 +103,3 @@ const ProductsPage = ({ searchParams }) => {
 };
 
 export default ProductsPage;
-
-//   // Add a new product
-//   const addProduct = (newProduct) => {
-//     setProducts([...products, newProduct]);
-//   };
-
-//   // Edit an existing product by id
-//   const editProduct = (id, updatedProduct) => {
-//     setProducts(products.map((product) =>
-//       product.id === id ? { ...product, ...updatedProduct } : product
-//     ));
-//   };
-
-//   return (
-//     <div>
-//       <h1>Product List</h1>
-//       <ul>
-//         {products.map((product) => (
-//           <li key={product.id}>
-//             {product.name} - ${product.price}
-//             <button onClick={() => editProduct(product.id, { price: newPrice })}>Edit</button>
-//             <button onClick={() => deleteProduct(product.id)}>Delete</button>
-//           </li>
-//         ))}
-//       </ul>
-//       <button onClick={() => addProduct({ id: newId, name: 'New Product', price: 10 })}>Add Product</button>
-//     </div>
-//   );
-// };
-
-// export default ProductList;

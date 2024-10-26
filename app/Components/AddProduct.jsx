@@ -1,19 +1,25 @@
-import "./AddProduct.css"
+import "./AddProduct.css";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import placeHolder from "../../public/11.webp"
 
 
-const AddProduct = ({ setIsActive, products, setProducts}) => {
+
+const AddProduct = ({ setIsActive, products, setProducts }) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
+  const image = "https://archive.org/download/placeholder-image/placeholder-image.jpg"
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const newProduct = {title: title, price: price}
-    setProducts([...products, newProduct])
 
-    setIsActive(false)
-  }
+    const newProduct = { id: uuidv4(), title: title, price: price, rating: 4.96, discountPercentage
+      : 10, 
+      thumbnail: image};
+    console.log(newProduct);
+    setProducts([newProduct, ...products]);
+    setIsActive(false);
+  };
 
   return (
     <div className="overlay">
@@ -27,7 +33,6 @@ const AddProduct = ({ setIsActive, products, setProducts}) => {
               className="form-input"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              
             />
           </label>
           <label className="form-label">
@@ -37,10 +42,11 @@ const AddProduct = ({ setIsActive, products, setProducts}) => {
               className="form-input"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              
             />
           </label>
-          <button type="submit" className="form-button">Add Product</button>
+          <button type="submit" className="form-button">
+            Add Product
+          </button>
         </form>
       </div>
     </div>
