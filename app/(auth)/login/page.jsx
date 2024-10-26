@@ -1,6 +1,6 @@
-import "./Auth.css"
+import "./LoginPage.css"
 
-const AuthPage = () => {
+const LoginPage = () => {
   return (
     <div className="auth-container">
       <h2 className="auth-title">Login</h2>
@@ -20,4 +20,4 @@ const AuthPage = () => {
   )
 }
 
-export default AuthPage
+export default LoginPage
