@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import "./Navbar.css";
-import useTheme from "../Components/hooks/useTheme"
+import useTheme from "../hooks/useTheme"
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme()

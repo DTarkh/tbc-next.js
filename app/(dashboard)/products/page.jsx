@@ -1,9 +1,9 @@
 "use client";
 
-import ProductCard from "./ProductList";
+import ProductCard from "../../Components/ProductList";
 import Link from "next/link";
-import Search from "./Search";
-import useProducts2 from "./hooks/useProducts2";
+import Search from "../../Components/Search";
+import useProducts2 from "../../Components/hooks/useProducts2";
 import { useState } from "react";
 import EditWindow from "../../Components/EditWindow";
 import Spinner from "../../Components/Spinner";
