@@ -1,36 +1,44 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import "./LoginPage.css";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevents form from reloading the page
     setError(null); // Clear any previous error
-
+    console.log("Login")
     try {
       const response = await fetch("https://dummyjson.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password, expiresInMins: 30 }),
-        credentials: "include",
+        body: JSON.stringify({ username: username, password: password, expiresInMins: 30 }),
       });
 
       if (!response.ok) throw new Error("Invalid login credentials");
 
       const data = await response.json();
       console.log("Login successful:", data);
-      // Handle successful login (e.g., redirect user, save token, etc.)
+      
+      localStorage.setItem("token", data.accessToken);
+      router.push("/home"); // თუ იყენებთ router-ს
+
+      return data;
+
     } catch (err) {
-      setError(err.message); // Display error to the user
+      setError(err.message)
     }
+
+    
   };
 
-  // Add additional form validation, such as checking if the username and password are not empty, etc.
+
 
   return (
     <div className="auth-container">
