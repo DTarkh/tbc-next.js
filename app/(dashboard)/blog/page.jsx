@@ -1,4 +1,5 @@
 import Blog from "../../Components/Blog";
+import "./BlogPage.css"
 
 
 const BlogPage = async () => {
@@ -6,10 +7,11 @@ const BlogPage = async () => {
   const { posts } = await res.json();
 
   return (
-    <div>
+    <div className="blog-page-container">
         
       {posts.map((post) => (
-        <Blog blog={post} key={post.id} />
+        <Blog 
+        blog={post} key={post.id} />
       ))}
 
     </div>

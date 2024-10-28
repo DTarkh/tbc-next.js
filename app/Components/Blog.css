@@ -1,84 +1,74 @@
 /* Blog.css */
+
 .blog-container {
-    max-width: 700px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #F9F9F9;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  }
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
-  .blog-container:hover {
-    transform: scale(1.05);
-    background-color: #f0f8ff;
-    cursor: pointer;
-  }
-  
-  .blog-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .blog-body {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    white-space: nowrap; 
-    text-overflow: ellipsis;     
-    overflow: hidden; 
+.blog-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
 
-  }
-  
-  .blog-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    color: #777;
-  }
-  
-  .blog-tags {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .blog-tag {
-    background-color: #0070f3;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-  }
-  
-  .blog-reactions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .likes, .dislikes {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-  
-  .blog-views {
-    font-size: 14px;
-    color: #999;
-  }
+.blog-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
 
-  .blog-button {
-    background-color: #787373; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-    font-size: 16px; 
-    padding: 5px;
-    color: #333;
-  }
-  
-  .blog-button:hover {
-    background-color: #005bb5;
-    transform: scale(1.05);    
-  }
+.blog-body {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.blog-reactions {
+  display: flex;
+  gap: 15px;
+  color: #666;
+}
+
+.likes,
+.dislikes {
+  font-size: 14px;
+}
+
+.blog-views {
+  font-size: 14px;
+  color: #666;
+}
+
+.blog-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.blog-button:hover {
+  background-color: #0056b3;
+}

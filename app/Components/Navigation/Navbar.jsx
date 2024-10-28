@@ -7,12 +7,6 @@ import useTheme from "../hooks/useTheme"
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme()
 
-  // read from localstorageconst : theme = localStorage.getItem("theme");
-
-  // if we want to save to localstorage in has to be jsonstirigified.
-
-  
-
   return (
     <div
       className="nav-container"

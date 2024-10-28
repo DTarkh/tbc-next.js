@@ -1,4 +1,4 @@
-import SingleProduct from "./SingleProduct";
+import SingleProduct from "../../../Components/SingleProduct";
 
 const page = async ({ params: { id } }) => {
   const res = await fetch(`https://dummyjson.com/products/${id}`);

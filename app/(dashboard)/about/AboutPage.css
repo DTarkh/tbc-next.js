@@ -1,0 +1,32 @@
+/* AboutPage.css */
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 82vh;
+    background-color: #fafafa;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ff6347;
+  }
+  
+  .about-description,
+  .about-mission {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 700px;
+    margin-bottom: 15px;
+  }
+  
+  .about-mission strong {
+    color: #333;
+  }
