@@ -1,26 +1,23 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const URL = "https://dummyjson.com/products"
 
 const useProducts2 = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch products from API on component mount
-    const fetchProducts = () => {
-      fetch('https://dummyjson.com/products')
-      .then(response => response.json())
-      .then(data => { setProducts(data.products);
-        setLoading(false)} )
-      
-    };
-
-    fetchProducts();
+  axios.get(URL)
+      .then((response) => {
+        setProducts(response.data.products);
+        setLoading(false);
+      });
   }, []);
 
-  return { products, setProducts, loading }
-
-}
+  return { products, setProducts, loading };
+};
 
 export default useProducts2;
