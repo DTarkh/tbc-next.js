@@ -1,0 +1,78 @@
+/* Dimmed background overlay */
+.edit-overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Centered form container */
+  .edit-form-wrapper {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .edit-form-title {
+    margin-bottom: 16px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  /* Input and textarea styling */
+  .edit-input-field,
+  .edit-textarea-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .edit-form-label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  /* Buttons styling */
+  .edit-form-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .edit-save-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-cancel-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-save-button:hover,
+  .edit-cancel-button:hover {
+    opacity: 0.9;
+  }

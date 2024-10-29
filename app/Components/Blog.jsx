@@ -23,7 +23,7 @@ const Blog = ({ blog, onDelete, onEdit }) => {
         <button className="blog-delete-button" onClick={() => onDelete(blog.id)}>
           Delete
         </button>
-        <button className="blog-add-button" onClick={onEdit}>
+        <button className="blog-add-button" onClick={() => onEdit(blog.id)}>
           Edit
         </button>
       </div>
