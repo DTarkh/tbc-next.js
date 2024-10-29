@@ -15,7 +15,7 @@ const useBlog = () => {
     setLoading(false);
   }, []);
 
-  return { posts, loading}
+  return { posts, setPosts, loading}
 };
 
 export default useBlog;

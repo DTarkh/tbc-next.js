@@ -1,8 +1,7 @@
-
-import "./Blog.css"
+import "./Blog.css";
 import Link from "next/link";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, onDelete, onEdit }) => {
   return (
     <div className="blog-container">
       <h2 className="blog-title">{blog.title}</h2>
@@ -17,7 +16,16 @@ const Blog = ({ blog }) => {
         <div className="blog-views">
           <span>👁️ {blog.views} views</span>
         </div>
-        <Link href={`/blog/${blog.id}`}><button className="blog-button">Read more</button></Link>
+        
+        <Link href={`/blog/${blog.id}`}>
+          <button className="blog-button">Read more</button>
+        </Link>
+        <button className="blog-delete-button" onClick={() => onDelete(blog.id)}>
+          Delete
+        </button>
+        <button className="blog-add-button" onClick={onEdit}>
+          Edit
+        </button>
       </div>
     </div>
   );

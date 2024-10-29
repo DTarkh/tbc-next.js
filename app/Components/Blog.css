@@ -55,6 +55,7 @@
 .blog-views {
   font-size: 14px;
   color: #666;
+  padding-right: 250px;
 }
 
 .blog-button {
@@ -71,4 +72,25 @@
 
 .blog-button:hover {
   background-color: #0056b3;
+}
+
+
+.blog-delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-left: 8px;
+  border-radius: 8px;
+}
+
+.blog-add-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-left: 8px;
+  border-radius: 8px;
 }
