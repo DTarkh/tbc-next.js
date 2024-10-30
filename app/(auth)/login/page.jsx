@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import "./LoginPage.css";
+import { useAuthRedirect } from "../../Components/hooks/useAuthRedirect"
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const router = useRouter();
+
+  useAuthRedirect()
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevents form from reloading the page
@@ -26,6 +29,7 @@ const LoginPage = () => {
       const data = await response.json();
       console.log("Login successful:", data);
       
+      localStorage.setItem("isAuthenticated", JSON.stringify(true));
       localStorage.setItem("token", data.accessToken);
       router.push("/home"); // თუ იყენებთ router-ს
 
