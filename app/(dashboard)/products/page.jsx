@@ -10,7 +10,7 @@ import Spinner from "../../Components/Spinner";
 import AddProduct from "../../Components/AddProduct";
 
 const ProductsPage = ({ searchParams }) => {
-  const { sortBy, order, search } = searchParams;
+  // const { sortBy, order, search } = searchParams;
 
   const { products, setProducts, loading } = useProducts2();
   const [currentProduct, setCurrentProduct] = useState([]);
@@ -94,9 +94,9 @@ const ProductsPage = ({ searchParams }) => {
       <div className="products-divider"></div>
 
       <ProductCard
-        sortBy={sortBy}
-        sortOrder={order}
-        search={search}
+        // sortBy={sortBy}
+        // sortOrder={order}
+        // search={search}
         products={products}
         setProducts={setProducts}
         setCurrentProduct={setCurrentProduct}

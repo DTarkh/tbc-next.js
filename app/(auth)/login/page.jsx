@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import "./LoginPage.css";
 import { useAuthRedirect } from "../../Components/hooks/useAuthRedirect"
+import LoadingSpinner from "@/app/Components/Spinner";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ const LoginPage = () => {
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  useAuthRedirect()
+  const loading = useAuthRedirect()
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevents form from reloading the page
@@ -42,6 +43,9 @@ const LoginPage = () => {
     
   };
 
+  if (loading) {
+    return <LoadingSpinner />
+  }
 
 
   return (
