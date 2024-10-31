@@ -1,0 +1,55 @@
+/* styles/AddPostForm.css */
+
+.add-post-form {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+}
+
+.add-post-label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-post-input,
+.add-post-textarea {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.add-post-input:focus,
+.add-post-textarea:focus {
+  outline: none;
+  border-color: #ff9800;
+  box-shadow: 0 0 6px rgba(255, 152, 0, 0.3);
+}
+
+.add-post-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.add-post-submit-button {
+  padding: 12px 20px;
+  background-color: #ff9800;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-post-submit-button:hover {
+  background-color: #e58900;
+}

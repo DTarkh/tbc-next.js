@@ -2,6 +2,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
+import { RiLogoutBoxLine } from "react-icons/ri";
 
 
 const LogoutButton = () => {
@@ -14,8 +15,9 @@ const LogoutButton = () => {
     };
 
     return (
-        <div onClick={handleLogout}>
-            <button>Logout</button>
+        <div onClick={handleLogout} className='flex items-center text-gray-700 hover:text-orange-500 cursor-pointer'>
+            <p>Logout:</p>
+            <RiLogoutBoxLine />
         </div>
     );
 };

@@ -6,6 +6,7 @@ import useBlog from "../../Components/hooks/useBlog";
 import LoadingSpinner from "../../Components/Spinner";
 import { useState } from "react";
 import EditPost from "../../Components/EditPost"
+import AddPostFrom from "../../Components/AddPostForm"
 
 const BlogPage = () => {
   // const res = await fetch("https://dummyjson.com/posts");
@@ -39,6 +40,7 @@ const onEdit = (id) => {
 
   return (
     <div className="blog-page-container">
+      <AddPostFrom setPosts={setPosts} posts={posts}/>
       {active && (<EditPost currentPost={currentPost} setActive={setActive} setPosts={setPosts} posts={posts}/>)}
       {posts.map((post) => (
         <Blog blog={post} key={post.id} onDelete={onDelete} onEdit={onEdit} setActive={setActive}/>
