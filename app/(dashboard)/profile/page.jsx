@@ -1,51 +1,26 @@
-'use client'
-import { useEffect, useState } from "react";
-import "./UserPage.css";
+'use client';
 
-const UserPage = () => {
-  const [userData, setUserData] = useState(null);
-  const [error, setError] = useState(null);
+import { useUser } from '@auth0/nextjs-auth0/client';
+import "./UserPage.css"
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    
-    if (!token) {
-      setError("No token found. Please log in.");
-      return;
-    }
 
-    fetch('https://dummyjson.com/auth/me', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      }, 
-    })
-      .then(res => {
-        if (!res.ok) throw new Error("Failed to fetch user data");
-        return res.json();
-      })
-      .then(data => setUserData(data))
-      .catch(err => setError(err.message));
-  }, []);
+export default function ProfileClient() {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
-    <div className="user-page">
-      {error && <p className="error-message">{error}</p>}
-      {userData ? (
-        <div className="user-card">
-          <img src={userData.image} alt={`${userData.firstName} ${userData.lastName}`} className="user-image" />
-          <h2>{userData.firstName} {userData.lastName}</h2>
-          <p><strong>Age:</strong> {userData.age}</p>
-          <p><strong>Gender:</strong> {userData.gender}</p>
-          <p><strong>Email:</strong> {userData.email}</p>
-          <p><strong>Phone:</strong> {userData.phone}</p>
-          <p><strong>Birth Date:</strong> {userData.birthDate}</p>
-        </div>
-      ) : (
-        !error && <p>Loading...</p>
-      )}
-    </div>
+    user && (
+      <div className='user-page'>
+
+      <div className='user-card'>
+      <img src={user.picture} />
+        <h2>{user.name}</h2>
+        <p>{user.email}</p>
+      </div>
+
+      </div>
+    )
   );
 }
-
-export default UserPage;
