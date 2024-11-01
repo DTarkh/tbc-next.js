@@ -4,12 +4,24 @@ import Link from "next/link";
 import "./Navbar.css";
 import LogoutButton from "../../Components/LogoutButton"
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { useState } from "react";
+import Menu from "../../Components/Menu"
 // import useTheme from "../hooks/useTheme"
 
 const Navbar = () => {
   // const { theme, toggleTheme } = useTheme()
   const { user } = useUser();
+  const [active, setActive] = useState(false)
 
+
+  const handleClick = () => {
+    setActive(true)
+
+    if (active) {
+      setActive(false)
+    }
+
+  }
   return (
     <div
       className="nav-container"
@@ -46,14 +58,7 @@ const Navbar = () => {
           {" "}
           <li>Products</li>
         </Link>
-        <Link
-          className="nav-link"
-          href="/profile"
-          // style={{ color: theme === "dark" ? "white" : "black" }}
-        >
-          {" "}
-          <li>Profile</li>
-        </Link>
+       
 
         {/* <button className="nav-btn"
         onClick={toggleTheme}
@@ -61,8 +66,9 @@ const Navbar = () => {
           Toggle to {theme === "dark" ? "light" : "dark"}
         </button> */}
       </ul>
-      <p className="px-7">You are logged in as: <br/>{user.name}</p>
-      <LogoutButton />
+      {user && <img src={user.picture} alt={user.name} onClick={handleClick}className="w-9  hover:cursor-pointer absolute right-[190px] " />}
+      {active && <Menu />}
+   
     </div>
   );
 };

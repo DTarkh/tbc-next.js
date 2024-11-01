@@ -6,6 +6,7 @@ import LoadingSpinner from "../Components/Spinner";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Menu from "../Components/Menu";
 
 const Layout = ({ children }) => {
   const { user, isLoading } = useUser();
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
+    
       {children}
       <Footer />
     </>
