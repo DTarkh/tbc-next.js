@@ -6,6 +6,8 @@ import LogoutButton from "../../Components/LogoutButton"
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useState } from "react";
 import Menu from "../../Components/Menu"
+import logo from "../../../public/Logo.png"
+import Image from "next/image";
 // import useTheme from "../hooks/useTheme"
 
 const Navbar = () => {
@@ -27,6 +29,7 @@ const Navbar = () => {
       className="nav-container"
       // style={{ backgroundColor: theme === "dark" ? "black" : "white" }}
     >
+      <Image src={logo} alt="Logo" width={100} height={50} className="absolute left-24"/>
       <ul>
         <Link
           className="nav-link"
