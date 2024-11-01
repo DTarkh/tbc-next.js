@@ -3,10 +3,12 @@
 import Link from "next/link";
 import "./Navbar.css";
 import LogoutButton from "../../Components/LogoutButton"
+import { useUser } from '@auth0/nextjs-auth0/client';
 // import useTheme from "../hooks/useTheme"
 
 const Navbar = () => {
   // const { theme, toggleTheme } = useTheme()
+  const { user } = useUser();
 
   return (
     <div
@@ -59,6 +61,7 @@ const Navbar = () => {
           Toggle to {theme === "dark" ? "light" : "dark"}
         </button> */}
       </ul>
+      <p className="px-7">You are logged in as: <br/>{user.name}</p>
       <LogoutButton />
     </div>
   );
