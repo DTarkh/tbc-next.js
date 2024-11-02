@@ -19,7 +19,9 @@ if(loading) {
   return (
     <>
         <Navbar />
+        <main className="bg-gray-100 min-h-screen p-4 flex flex-col justify-center items-center dark:bg-slate-600">
         {children}
+      </main>
         <Footer />
         </>
   )

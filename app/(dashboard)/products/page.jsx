@@ -24,17 +24,17 @@ const ProductsPage = ({ searchParams }) => {
 
   if (loading) {
     return (
-      <div className="products-container">
+      <>
         <div className="products-header">
           <h1 className="products-headertext">Products</h1>
         </div>
         <Spinner />;
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="products-container">
+    <>
       {active && (
         <EditWindow
           currentProduct={currentProduct}
@@ -102,7 +102,7 @@ const ProductsPage = ({ searchParams }) => {
         setCurrentProduct={setCurrentProduct}
         setActive={setActive}
       />
-    </div>
+    </>
   );
 };
 

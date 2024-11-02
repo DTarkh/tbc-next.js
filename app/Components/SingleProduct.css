@@ -1,12 +1,5 @@
-.singleProduct-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:82vh;
-    background-color: #fff
-  }
-  
+
+
 
 .product-details-container {
     display: flex;

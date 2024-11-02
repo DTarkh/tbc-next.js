@@ -5,7 +5,7 @@ const Page = async ({ params: { id } }) => {
   const post = await res.json();
 
   return (
-    <div className="blog-post-container">
+    <>
       <div className="blog-post-card">
         <h2 className="blog-post-title">{post.title}</h2>
         <p className="blog-post-body">{post.body}</p>
@@ -32,7 +32,7 @@ const Page = async ({ params: { id } }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import "./SingleProduct.css";
 
 const SingleProduct = ({ product }) => {
   return (
-    <div className="singleProduct-container">
+    <>
       <div className="product-details-container" key={product.id}>
   <div className="product-image">
     <img src={product.thumbnail} alt="Product image" />
@@ -27,7 +27,7 @@ const SingleProduct = ({ product }) => {
     </div>
   </div>
 </div>
-    </div>
+    </>
   );
 };
 

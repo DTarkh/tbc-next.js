@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   height: 82vh;
-  background-color: #f0f8ff;
   color: #333;
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -21,6 +20,5 @@
 
 .home-description {
   font-size: 1.2em;
-  color: #555;
   max-width: 600px;
 }

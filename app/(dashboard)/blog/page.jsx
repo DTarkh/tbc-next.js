@@ -1,7 +1,6 @@
 "use client";
 
 import Blog from "../../Components/Blog";
-import "./BlogPage.css";
 import useBlog from "../../Components/hooks/useBlog";
 import LoadingSpinner from "../../Components/Spinner";
 import { useState } from "react";
@@ -33,19 +32,19 @@ const onEdit = (id) => {
 
   if (loading)
     return (
-      <div className="blog-page-container">
+      <>
         <LoadingSpinner />
-      </div>
+      </>
     );
 
   return (
-    <div className="blog-page-container">
+    <>
       <AddPostFrom setPosts={setPosts} posts={posts}/>
       {active && (<EditPost currentPost={currentPost} setActive={setActive} setPosts={setPosts} posts={posts}/>)}
       {posts.map((post) => (
         <Blog blog={post} key={post.id} onDelete={onDelete} onEdit={onEdit} setActive={setActive}/>
       ))}
-    </div>
+    </>
   );
 };
 
