@@ -29,7 +29,7 @@ const Navbar = () => {
       className="nav-container"
       // style={{ backgroundColor: theme === "dark" ? "black" : "white" }}
     >
-      <Image src={logo} alt="Logo" width={100} height={50} className="absolute left-24"/>
+      <Image src={logo} alt="Logo" width={100} height={50} className="absolute left-24 hover:cursor-pointer"/>
       <ul>
         <Link
           className="nav-link"
