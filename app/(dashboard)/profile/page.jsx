@@ -7,7 +7,7 @@ const UserPage = () => {
  
 
   return (
-    <div className="user-page">
+    <>
       {error && <p className="error-message">{error}</p>}
       {userData ? (
         <div className="user-card">
@@ -22,7 +22,7 @@ const UserPage = () => {
       ) : (
         !error && <p>Loading...</p>
       )}
-    </div>
+    </>
   );
 
   

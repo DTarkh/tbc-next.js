@@ -18,7 +18,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="nav-container dark:bg-neutral-800">
+    <div className="nav-container dark:bg-neutral-800" >
       <ul>
         <Link className="nav-link" href="/">
           <li className="dark:text-white">Home</li>

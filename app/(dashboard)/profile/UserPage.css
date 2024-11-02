@@ -1,14 +1,4 @@
-/* UserPage.css */
 
-.user-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 82vh;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 20px;
-  }
   
   .user-card {
     background-color: #fff;
