@@ -2,36 +2,47 @@
 
 import Link from "next/link";
 import "./Navbar.css";
-import LogoutButton from "../../Components/LogoutButton"
-// import useTheme from "../hooks/useTheme"
+import useProfile from "../../Components/hooks/useProfile"
+import { useState } from "react";
+import Menu from "../../Components/Menu"
 
 const Navbar = () => {
-  // const { theme, toggleTheme } = useTheme()
+ 
+const { userData} = useProfile()
+const [active, setActive] = useState(false)
 
+
+const handleClick = () => {
+  setActive(true);
+
+  if (active) {
+    setActive(false);
+  }
+}
   return (
     <div
       className="nav-container"
-      // style={{ backgroundColor: theme === "dark" ? "black" : "white" }}
+     
     >
       <ul>
         <Link
           className="nav-link"
           href="/"
-          // style={{ color: theme === "dark" ? "white" : "black" }}
+          
         >
           <li>Home</li>
         </Link>
         <Link
           className="nav-link"
           href="/about"
-          // style={{ color: theme === "dark" ? "white" : "black" }}
+         
         >
           <li>About</li>
         </Link>
         <Link
           className="nav-link"
           href="/blog"
-          // style={{ color: theme === "dark" ? "white" : "black" }}
+          
         >
           {" "}
           <li>Blog</li>
@@ -39,27 +50,15 @@ const Navbar = () => {
         <Link
           className="nav-link"
           href="/products"
-          // style={{ color: theme === "dark" ? "white" : "black" }}
+          
         >
-          {" "}
+          
           <li>Products</li>
         </Link>
-        <Link
-          className="nav-link"
-          href="/profile"
-          // style={{ color: theme === "dark" ? "white" : "black" }}
-        >
-          {" "}
-          <li>Profile</li>
-        </Link>
-
-        {/* <button className="nav-btn"
-        onClick={toggleTheme}
-         >
-          Toggle to {theme === "dark" ? "light" : "dark"}
-        </button> */}
+       
       </ul>
-      <LogoutButton />
+     {userData && <img  onClick={handleClick} className="w-10 rounded-full absolute right-[200px] hover:cursor-pointer"  src={userData.image}/>}
+     {active && <Menu/>}
     </div>
   );
 };
