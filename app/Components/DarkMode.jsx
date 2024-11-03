@@ -13,26 +13,18 @@ const [darkMode, setDarkMode] = useState(false)
 
 
 useEffect(() => {
-    // Read from localStorage or system settings
-    const savedTheme = localStorage.getItem("theme");
+    // Check system preference first, then fallback to saved theme
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (savedTheme) {
-      setDarkMode(savedTheme === "dark");
+    if (systemPrefersDark) {
+        setDarkMode(true);
+        localStorage.setItem("theme", "dark");  // Optional: save to localStorage to remember preference
     } else {
-      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setDarkMode(systemPrefersDark);
+        const savedTheme = localStorage.getItem("theme");
+        setDarkMode(savedTheme === "dark");
     }
-  }, []);
+}, []);
 
-
-// useEffect(() => {
-//     const theme = localStorage.getItem('theme')
-//     if (theme === 'dark') {
-//       setDarkMode(true)
-//     } 
-    
-
-// }, [] )
 
 useEffect(() => {
     if (darkMode) {
