@@ -5,6 +5,7 @@ import "./Navbar.css";
 import useProfile from "../../Components/hooks/useProfile";
 import { useState } from "react";
 import Menu from "../../Components/Menu";
+import DarkMode from "../../Components/DarkMode"
 
 const Navbar = () => {
   const { userData } = useProfile();
@@ -18,7 +19,11 @@ const Navbar = () => {
     }
   };
   return (
+    
     <div className="nav-container dark:bg-neutral-800" >
+      <div><h2 className="text-xl font-bold dark:text-white">
+  SHOP <span className="text-orange-500">SPHERE</span>
+</h2></div>
       <ul>
         <Link className="nav-link" href="/">
           <li className="dark:text-white">Home</li>
@@ -34,8 +39,9 @@ const Navbar = () => {
           <li className="dark:text-white">Products</li>
         </Link>
       </ul>
+      <div className="flex items-center gap-10">
       {userData && (
-        <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-gray-700 absolute right-[200px]">
+        <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-gray-700">
           <img
             onClick={handleClick}
             src={userData.image}
@@ -44,6 +50,10 @@ const Navbar = () => {
           />
         </div>
       )}
+
+      <DarkMode />
+
+      </div>
       {active && <Menu />}
     </div>
   );

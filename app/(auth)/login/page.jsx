@@ -59,6 +59,7 @@ const LoginPage = () => {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            autoFocus
           />
         </div>
         <div className="form-group">
@@ -75,7 +76,7 @@ const LoginPage = () => {
           Login
         </button>
       </form>
-      {/* <p className="auth-footer">Don&apos;t have an account? <a href="/auth/register">Register here</a></p> */}
+      <p className="auth-footer">Don&apos;t have an account? <a href="/auth/register">Register here</a></p>
     </div>
   );
 };
