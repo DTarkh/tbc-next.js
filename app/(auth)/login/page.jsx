@@ -50,8 +50,8 @@ const LoginPage = () => {
 
   return (
     <div className="auth-container">
-      <h2 className="auth-title">Login</h2>
       <form className="auth-form" onSubmit={handleSubmit}>
+      <h2 className="auth-title">LOGIN</h2>
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input

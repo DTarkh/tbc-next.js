@@ -41,7 +41,7 @@ const Navbar = () => {
       </ul>
       <div className="flex items-center gap-10">
       {userData && (
-        <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-gray-700">
+        <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-amber-500">
           <img
             onClick={handleClick}
             src={userData.image}
