@@ -1,9 +1,8 @@
 /* General footer styles */
 .footer {
-  background-color: #f2f2f2; /* Brighter background */
-  color: #333;
   padding: 20px 0;
   font-family: 'Arial', sans-serif;
+  height: 10vh;
 }
 
 .footer-content {
@@ -21,10 +20,8 @@
 }
 
 .footer-links a {
-  color: #333;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -38,8 +35,7 @@
 
 .social-icon {
   font-size: 1.5rem;
-  color: #333;
-  transition: color 0.3s ease;
+  transition: color 0s;
 }
 
 .social-icon:hover {
@@ -50,7 +46,6 @@
   text-align: center;
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #666;
 }
 
 @media (max-width: 768px) {

@@ -1,16 +1,17 @@
+import Link from "next/link";
 import "./Footer.css"
 
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer bg-orange-300 dark:bg-orange-950" >
       <div className="footer-content">
         <div className="footer-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/blog">Blog</a>
-          <a href="/products">Products</a>
+          <Link href="/home" className="dark:text-zinc-200">Home</Link>
+          <Link href="/about" className="dark:text-zinc-200">About</Link>
+          <Link href="/blog" className="dark:text-zinc-200">Blog</Link>
+          <Link href="/products" className="dark:text-zinc-200">Products</Link>
         </div>
 
         <div className="social-links">
@@ -19,21 +20,21 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebookF className="social-icon" />
+            <FaFacebookF className="social-icon dark:text-zinc-200" />
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="social-icon" />
+            <FaInstagram className="social-icon dark:text-zinc-200" />
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedinIn className="social-icon" />
+            <FaLinkedinIn className="social-icon dark:text-zinc-200" />
           </a>
         </div>
       </div>
