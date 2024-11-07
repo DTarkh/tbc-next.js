@@ -1,24 +1,53 @@
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
+import useProfile from "../Components/hooks/useProfile";
+import { useState } from "react";
 
 export default function DropdownMenu() {
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const { userData } = useProfile();
   const router = useRouter();
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   const handleLogout = () => {
-    localStorage.clear(); 
-   
-    router.push('/login'); 
-};
-  
+    localStorage.clear();
+    setIsOpen(false); // Close the dropdown on logout
+    router.push("/login");
+  };
+
   return (
-        <div className="absolute right-[100px] top-[50px]   mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-2">
-          <ul className="py-1 flex flex-col">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"><Link href='/profile'>Profile</Link></li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={handleLogout}>Logout</li>
-          </ul>
+    <>
+      {userData && (
+        <div className="relative flex items-center">
+          <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-amber-500">
+            <img
+              onClick={toggleDropdown}
+              src={userData.image}
+              alt={`${userData.firstName} ${userData.lastName}`}
+              className="w-full h-full rounded-full cursor-pointer"
+            />
+          </div>
+
+          {isOpen && (
+            <div className="absolute right-0 top-[50px] mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+              <ul className="py-1 flex flex-col">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  <Link href="/profile" onClick={() => setIsOpen(false)}>Profile</Link>
+                </li>
+                <li
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
-    
-    
+      )}
+    </>
   );
 }
