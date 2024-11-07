@@ -6,6 +6,7 @@ import useProfile from "../../Components/hooks/useProfile";
 import { useState } from "react";
 import Menu from "../../Components/Menu";
 import DarkMode from "../../Components/DarkMode"
+import LanguageSwitcher from "../../Components/LanguageSwitcher"
 
 const Navbar = () => {
   const { userData } = useProfile();
@@ -52,6 +53,7 @@ const Navbar = () => {
       )}
 
       <DarkMode />
+      <LanguageSwitcher />
 
       </div>
       {active && <Menu />}

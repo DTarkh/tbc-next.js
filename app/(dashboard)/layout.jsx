@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <main className="bg-gray-100 min-h-screen flex flex-col justify-center items-center dark:bg-slate-600">
+      <main className="bg-gray-100 min-h-[82vh] flex flex-col justify-center items-center dark:bg-slate-600">
         {children}
       </main>
       <Footer />
