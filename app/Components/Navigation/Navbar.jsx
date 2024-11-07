@@ -26,7 +26,7 @@ const Navbar = () => {
   SHOP <span className="text-orange-500">SPHERE</span>
 </h2></div>
       <ul>
-        <Link className="nav-link" href="/">
+        <Link className="nav-link" href="/home">
           <li className="dark:text-white">Home</li>
         </Link>
         <Link className="nav-link" href="/about">
