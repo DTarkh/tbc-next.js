@@ -1,6 +1,9 @@
 {
-    "HomePage": {
-      "title": "სალამი",
-      "about": "ჩემს შესახებ"
-    }
+  "AboutPage": {
+    "title": "ჩვენს შესახებ"
+  },
+
+  "Navigation": {
+    "home": "მთავარი"
   }
+}

@@ -1,6 +1,13 @@
 {
-    "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
-    }
+  "AboutPage": {
+    "title": "ABOUT US"
+  },
+
+  "Navigation": {
+    "home": "Home"
   }
+
+}
+
+
+
