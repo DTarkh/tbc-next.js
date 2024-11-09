@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2024 YourStore. All rights reserved.</p>
+        <p className="dark:text-zinc-200" >&copy; 2024 YourStore. All rights reserved.</p>
       </div>
     </footer>
   );

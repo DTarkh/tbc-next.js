@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
     <div className="relative inline-block text-left">
       <button
         onClick={toggleDropdown}
-        className="px-3 py-1 font-semibold rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition"
+        className="px-3 py-1 w-[55px] font-semibold rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition"
       >
         {language}
       </button>
