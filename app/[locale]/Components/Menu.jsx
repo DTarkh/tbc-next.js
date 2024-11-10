@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "../../../i18n/routing";
 import { useRouter } from "next/navigation";
 import useProfile from "../Components/hooks/useProfile";
 import { useState } from "react";
@@ -15,7 +15,7 @@ export default function DropdownMenu() {
   const handleLogout = () => {
     localStorage.clear();
     setIsOpen(false); // Close the dropdown on logout
-    router.push("/login");
+    router.push("/");
   };
 
   return (

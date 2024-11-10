@@ -13,9 +13,9 @@ const Search = () => {
     setValue(event.target.value);
   };
 
-  useEffect(() => {
-    router.push(`/products?search=${debounce}`);
-  }, [debounce, router]);
+  // useEffect(() => {
+  //   router.push(`/products?search=${debounce}`);
+  // }, [debounce, router]);
 
   return (
     <div>

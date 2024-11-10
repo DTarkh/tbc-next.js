@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "../../../../i18n/routing";
 import "./LoginPage.css";
 import { useAuthRedirect } from "../../Components/hooks/useAuthRedirect"
-import LoadingSpinner from "@/app/Components/Spinner";
+import LoadingSpinner from "../../Components/Spinner";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");

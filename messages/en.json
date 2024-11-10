@@ -4,7 +4,10 @@
   },
 
   "Navigation": {
-    "home": "Home"
+    "home": "Home",
+    "about": "About Us",
+    "blog": "Blog",
+    "products": "Products"
   }
 
 }
