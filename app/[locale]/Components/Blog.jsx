@@ -1,5 +1,5 @@
 import "./Blog.css";
-import Link from "next/link";
+import { Link } from "../../../i18n/routing";
 
 const Blog = ({ blog, onDelete, onEdit }) => {
   return (

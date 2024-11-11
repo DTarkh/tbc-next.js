@@ -1,7 +1,7 @@
 "use client";
 
 import ProductCard from "../../Components/ProductList";
-import Link from "next/link";
+import { Link } from "../../../../i18n/routing";
 import Search from "../../Components/Search";
 import useProducts2 from "../../Components/hooks/useProducts2";
 import { useState } from "react";
