@@ -8,6 +8,10 @@
     "about": "About Us",
     "blog": "Blog",
     "products": "Products"
+  },
+  "Profile": {
+    "profile": "profile",
+    "logout": "Logout"
   }
 
 }

@@ -1,6 +1,7 @@
 'use client'
 import useProfile from "../../Components/hooks/useProfile"
 import "./UserPage.css";
+import LoadingSpinner from "../../Components/Spinner";
 
 const UserPage = () => {
   const { userData, error } = useProfile()
@@ -20,7 +21,7 @@ const UserPage = () => {
           <p><strong>Birth Date:</strong> {userData.birthDate}</p>
         </div>
       ) : (
-        !error && <p>Loading...</p>
+        !error && <LoadingSpinner />
       )}
     </>
   );

@@ -1,17 +1,20 @@
-import Link from "next/link";
+import { Link } from "../../../../i18n/routing";
 import "./Footer.css"
+import {useTranslations} from 'next-intl';
 
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
+
+  const t = useTranslations('Navigation');
   return (
     <footer className="footer bg-orange-300 dark:bg-orange-950" >
       <div className="footer-content">
         <div className="footer-links">
-          <Link href="/home" className="dark:text-zinc-200">Home</Link>
-          <Link href="/about" className="dark:text-zinc-200">About</Link>
-          <Link href="/blog" className="dark:text-zinc-200">Blog</Link>
-          <Link href="/products" className="dark:text-zinc-200">Products</Link>
+          <Link href="/home" className="dark:text-zinc-200">{t('home')}</Link>
+          <Link href="/about" className="dark:text-zinc-200">{t('about')}</Link>
+          <Link href="/blog" className="dark:text-zinc-200">{t('blog')}</Link>
+          <Link href="/products" className="dark:text-zinc-200">{t('products')}</Link>
         </div>
 
         <div className="social-links">
