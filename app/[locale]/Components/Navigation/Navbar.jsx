@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "../../../../i18n/routing";
+import { Link } from "@/i18n/routing";
 import "./Navbar.css";
 import {useTranslations} from 'next-intl';
 import Menu from "../../Components/Menu";
@@ -9,9 +9,11 @@ import LanguageSwitcher from "../../Components/LanguageSwitcher";
 
 
 const Navbar = () => {
+
+
   const t = useTranslations('Navigation');
   return (
-    <div className="nav-container dark:bg-neutral-800">
+    <nav className="nav-container dark:bg-neutral-800 bg-slate-200">
       <div className="w-[220px]">
         <Link href="/home">
           <h2 className="text-xl font-bold dark:text-white">
@@ -20,18 +22,10 @@ const Navbar = () => {
         </Link>
       </div>
       <ul>
-        <Link className="nav-link" href="/home">
-          <li className="dark:text-white">{t('home')}</li>
-        </Link>
-        <Link className="nav-link" href="/about">
-          <li className="dark:text-white">{t('about')}</li>
-        </Link>
-        <Link className="nav-link" href="/blog">
-          <li className="dark:text-white">{t('blog')}</li>
-        </Link>
-        <Link className="nav-link" href="/products">
-          <li className="dark:text-white">{t('products')}</li>
-        </Link>
+        <li><Link className="nav-link dark:text-white" href="/home">{t('home')}</Link></li>
+        <li><Link className="nav-link dark:text-white" href="/about">{t('about')}</Link></li>
+        <li><Link className="nav-link dark:text-white" href="/blog">{t('blog')}</Link></li>
+        <li><Link className="nav-link dark:text-white" href="/products">{t('products')}</Link></li>
       </ul>
       <div className="flex items-center gap-5 w-[220px] justify-end">
         
@@ -40,7 +34,7 @@ const Navbar = () => {
         <Menu />
 
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -5,6 +5,7 @@ import Footer from "../Components/Footer/Footer";
 import { useAuthCheck } from "../Components/hooks/useAuthCheck";
 import LoadingSpinner from "../Components/Spinner";
 
+
 const Layout = ({ children }) => {
   const loading = useAuthCheck();
 
@@ -15,7 +16,8 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <main className="bg-gray-100 min-h-[83vh] flex flex-col justify-center items-center dark:bg-slate-600">
+      <main className="bg-amber-300 min-h-[78vh] flex flex-col justify-center items-center dark:bg-slate-600 relative">
+      
         {children}
       </main>
       <Footer />

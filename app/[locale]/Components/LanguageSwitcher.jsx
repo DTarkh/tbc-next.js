@@ -2,15 +2,17 @@
 
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
+import { usePathname } from "@/i18n/routing"
 
 export default function LanguageSwitcher() {
   const router = useRouter();
+  const pathname = usePathname()
   const [isPending, startTransition ] = useTransition()
 
   const onSelectChange = (e) => {
     const nextLocale = e.target.value;
     startTransition(() => {
-    router.replace(`/${nextLocale}`) }
+    router.replace(`/${nextLocale}${pathname}`) }
   )
   }
   return (
