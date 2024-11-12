@@ -27,7 +27,7 @@ ul {
 }
 .nav-link:hover{
   color: #0077b5;
-  transition: color 0s;
+  transition: color 0.2s;
 }
 
 

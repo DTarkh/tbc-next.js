@@ -2,6 +2,12 @@
   "AboutPage": {
     "title": "ABOUT US"
   },
+  "HomePage": {
+    "title": "WELCOME TO THE HOME PAGE",
+    "description": "This is where you can find the latest updates and features. Enjoy browsing!",
+    "button": "Learn More!"
+  },
+  
 
   "Navigation": {
     "home": "Home",
