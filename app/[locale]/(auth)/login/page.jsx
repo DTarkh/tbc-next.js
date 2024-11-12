@@ -5,6 +5,8 @@ import { useRouter } from "../../../../i18n/routing";
 import "./LoginPage.css";
 import { useAuthRedirect } from "../../Components/hooks/useAuthRedirect"
 import LoadingSpinner from "../../Components/Spinner";
+import { FaEye } from "react-icons/fa6";
+import { IoMdPerson } from "react-icons/io";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -51,8 +53,8 @@ const LoginPage = () => {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmit}>
-      <h2 className="auth-title">LOGIN</h2>
-        <div className="form-group">
+      <h2 className="auth-title">Login</h2>
+        <div className="form-group relative">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -60,21 +62,27 @@ const LoginPage = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             autoFocus
+            className="form-input"
           />
+          <IoMdPerson className="absolute text-gray-500 right-2 top-12 "/>
         </div>
-        <div className="form-group">
+        <div className="form-group relative">
           <label htmlFor="password">Password</label>
+          
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="form-input"
+      
           />
+          <FaEye className="absolute right-2 top-12 text-gray-500"/>
         </div>
-        {error && <p className="auth-error">{error}</p>}
         <button type="submit" className="auth-button">
-          Login
+          Log in
         </button>
+        {error && <p className="auth-error">{error}</p>}
       </form>
       <p className="auth-footer">Don&apos;t have an account? <a href="/auth/register">Register here</a></p>
     </div>
