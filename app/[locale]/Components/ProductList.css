@@ -16,7 +16,6 @@
 }
 
 .ProductCard:hover {
-  transform: scale(1.05);
   background-color: #f0f8ff;
   cursor: pointer;
 }

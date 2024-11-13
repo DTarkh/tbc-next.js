@@ -53,16 +53,13 @@ const ProductsPage = () => {
         />
       )}
 
-      <div className="products-header">
-        <h1 className="products-headertext">Products</h1>
-      </div>
-      <div className="products-divider"></div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        <aside className="col-span-1 md:col-span-1 bg-gray-100 p-4 rounded-lg shadow-lg">
+
+      <div className="grid grid-cols-1 md:grid-cols-3 p-5">
+        <aside className="col-span-1 md:col-span-1">
           <NavPanel onAdd={onAdd}/>
         </aside>
 
-        <main className="col-span-1 md:col-span-2 bg-white p-4 rounded-lg shadow-lg">
+        <main className="col-span-1 md:col-span-2">
         <ProductCard
         products={products}
         setProducts={setProducts}

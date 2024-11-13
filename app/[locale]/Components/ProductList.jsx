@@ -3,9 +3,6 @@ import "./ProductList.css";
 // import fetchProducts from "./hooks/useProducts";
 
 const ProductCard = ({
-  sortBy,
-  sortOrder,
-  search,
   products,
   setProducts,
   setCurrentProduct,
