@@ -3,7 +3,8 @@
     "title": "ABOUT US"
   },
   "HomePage": {
-    "title": "WELCOME TO THE HOME PAGE",
+    "heading": "WELCOME",
+    "title": "TO THE ONLINE STORE",
     "description": "This is where you can find the latest updates and features. Enjoy browsing!",
     "button": "Learn More!"
   },

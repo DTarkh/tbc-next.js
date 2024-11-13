@@ -18,9 +18,9 @@
 
 .auth-form {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   background: white;
-  padding: 45px;
+  padding: 65px;
   border-radius: 18px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -47,7 +47,7 @@ input {
 .auth-button {
   margin-top: 45px;
   padding: 14px;
-  background-color: #8d2fc3;
+  background-color: #4B0082;
   color: white;
   border: none;
   border-radius: 40px;
@@ -55,7 +55,7 @@ input {
 }
 
 .auth-button:hover {
-  background-color: #cd345f;
+  background-color: #de6528;
   transition: background-color 0.3s;
 }
 
@@ -65,7 +65,7 @@ input {
 }
 
 .auth-footer a {
-  color: #8d2fc3;
+  color: #4B0082;
   text-decoration: none;
 }
 

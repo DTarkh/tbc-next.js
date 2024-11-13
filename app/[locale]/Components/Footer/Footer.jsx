@@ -8,7 +8,7 @@ const Footer = () => {
 
   const t = useTranslations('Navigation');
   return (
-    <footer className="footer bg-orange-300 dark:bg-orange-950" >
+    <footer className="footer bg-amber-100 dark:bg-neutral-800" >
       <div className="footer-content">
         <div className="footer-links">
           <Link href="/home" className="dark:text-zinc-200">{t('home')}</Link>

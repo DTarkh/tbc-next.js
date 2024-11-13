@@ -18,7 +18,7 @@ export default function LanguageSwitcher() {
   return (
     <select
       onChange={onSelectChange}
-      className="bg-transparent p-2 dark:text-slate-200 text-slate-800 appearance-none rounded-lg"
+      className="bg-transparent p-2 dark:text-slate-200 text-slate-500 appearance-none rounded-lg"
     >
       <option value="en">ENG</option>
       <option value="ka">ქარ</option>
