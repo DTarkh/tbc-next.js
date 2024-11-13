@@ -24,7 +24,7 @@ export default function DropdownMenu() {
     <>
       {userData && (
         <div className="relative flex items-center">
-          <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-amber-500">
+          <div className="w-12 h-12 rounded-full border-4 border-transparent transition-all hover:border-[#4B0082] hover:dark:border-orange-600">
             <img
               onClick={toggleDropdown}
               src={userData.image}

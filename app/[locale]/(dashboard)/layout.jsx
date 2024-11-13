@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <main className="bg-amber-300 min-h-[78vh] flex flex-col justify-center items-center dark:bg-slate-600 relative">
+      <main className="bg-amber-300 flex flex-col justify-center items-center dark:bg-slate-600 relative min-h-[82vh]">
       
         {children}
       </main>

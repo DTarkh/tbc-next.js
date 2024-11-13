@@ -40,10 +40,10 @@ useEffect(() => {
 }, [darkMode] )
  
   return (
-    <div className="relative w-16 h-8 flex items-center dark:bg-orange-800 bg-[#4B0082] cursor-pointer rounded-full p-1" onClick={() =>setDarkMode(!darkMode)}>
+    <div className="relative w-16 h-8 flex items-center dark:bg-[#ff9900] bg-[#4B0082] cursor-pointer rounded-full p-1" onClick={() =>setDarkMode(!darkMode)}>
         <FaMoon className="text-white" size={18}/>
         <div className="absolute bg-white w-6 h-6 rounded-full shadow-md " style={darkMode ? {left:"2px"} : {right: "2px"}}></div>
-        <BsSunFill className="text-yellow-400 ml-auto" size={18} />
+        <BsSunFill className="text-yellow-100 ml-auto" size={18} />
     </div>
   )
 }
