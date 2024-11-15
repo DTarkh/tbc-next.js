@@ -1,6 +1,7 @@
 import "./singleBlog.css";
 
-const Page = async ({ params: { id } }) => {
+const Page = async ({ params }) => {
+  const { id } = await params;
   const res = await fetch(`https://dummyjson.com/posts/${id}`);
   const post = await res.json();
 

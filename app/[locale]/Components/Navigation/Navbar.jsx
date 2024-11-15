@@ -55,9 +55,9 @@ const Navbar = () => {
       </ul>
       <div className="flex items-center gap-5 w-[220px] justify-end">
         
-        <DarkMode />
-        <LanguageSwitcher />
         <Menu />
+        <LanguageSwitcher />
+        <DarkMode />
 
       </div>
     </nav>

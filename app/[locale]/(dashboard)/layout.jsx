@@ -4,7 +4,7 @@ import Navbar from "../Components/Navigation/Navbar";
 import Footer from "../Components/Footer/Footer";
 import { useAuthCheck } from "../Components/hooks/useAuthCheck";
 import LoadingSpinner from "../Components/Spinner";
-import { SUSE} from 'next/font/google';
+import { SUSE } from 'next/font/google';
 
 const suse = SUSE({
   weight: ['400', '700'],
