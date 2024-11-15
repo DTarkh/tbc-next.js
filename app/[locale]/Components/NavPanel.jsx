@@ -1,9 +1,18 @@
 const NavPanel = ({ onAdd }) => {
   return (
-    <div className="w-full bg-gray-100 p-10 rounded-lg shadow-md">
+    <div className="w-full bg-gray-100 p-20 rounded-lg shadow-md">
       <h2 className="text-lg font-semibold text-gray-700 mb-4">
         Product Panel
       </h2>
+      <div className="mb-4">
+        <button
+          className="w-full bg-[#4B0082] dark:bg-[#ff9900] dark:hover:bg-[#4B0082] text-white py-2 rounded-md hover:bg-[#ff9900] transition duration-200"
+          onClick={() => onAdd()}
+        >
+          Add Product
+        </button>
+      </div>
+      
 
       <div className="mb-4">
         <input
@@ -38,14 +47,7 @@ const NavPanel = ({ onAdd }) => {
         </select>
       </div>
 
-      <div className="mb-4">
-        <button
-          className="w-full bg-[#4B0082] dark:bg-[#ff9900] dark:hover:bg-[#4B0082] text-white py-2 rounded-md hover:bg-[#ff9900] transition duration-200"
-          onClick={() => onAdd()}
-        >
-          Add Product
-        </button>
-      </div>
+      
     </div>
   );
 };

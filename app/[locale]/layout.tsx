@@ -2,7 +2,11 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import { Inter, Roboto_Serif } from 'next/font/google'
 import "../globals.css"
+
+const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto_Serif({ subsets: ['latin']})
  
 export default async function LocaleLayout({
   children,
@@ -21,9 +25,12 @@ export default async function LocaleLayout({
   const messages = await getMessages();
  
   return (
-        <NextIntlClientProvider messages={messages}>
+    <body className={roboto.className}>
+
+        <NextIntlClientProvider  messages={messages}>
           {children}
         </NextIntlClientProvider>
+    </body>
   );
 }
 

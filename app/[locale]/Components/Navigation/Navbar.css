@@ -1,6 +1,6 @@
 .nav-container {
   width: 100%;
-  height: 13vh;
+  height: 6vh;
   display: flex;
   align-items:center;
   justify-content: space-between;
@@ -8,6 +8,7 @@
   transition: background-color 0.3s ease;
   padding-left: 10%;
   padding-right: 10%;
+  position: fixed;
 }
 
 ul {
