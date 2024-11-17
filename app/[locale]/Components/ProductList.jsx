@@ -2,10 +2,10 @@ import { Link } from "../../../i18n/routing";
 import "./ProductList.css";
 import fetchProducts from "./hooks/useProducts";
 
-const ProductCard = async ( {searchParams} ) => {
+const ProductCard = async ( {search} ) => {
+  console.log('onCard', search);
+  const products = await fetchProducts(search);
   
-  const products = await fetchProducts();
-  console.log(searchParams)
 
   // const onDelete = (id) => {
   //   setProducts(products.filter((product) => product.id !== id));

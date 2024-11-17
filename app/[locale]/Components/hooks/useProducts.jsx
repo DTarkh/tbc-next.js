@@ -4,7 +4,7 @@ const fetchProducts = async (sortBy, sortOrder, search) => {
       `https://dummyjson.com/products/search?q=${search}`
     );
     const data = await response.json();
-    
+   
     return data.products;
   } else if (sortBy && sortOrder) {
     const response = await fetch(

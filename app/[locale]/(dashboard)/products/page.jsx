@@ -4,7 +4,9 @@ import ProductCard from "../../Components/ProductList";
 import NavPanel from "../../Components/NavPanel";
 
 
-const ProductsPage = () => {
+const ProductsPage = ({searchParams}) => {
+  const { search } = searchParams;
+  console.log('onpage' , search);
  
 
  
@@ -43,6 +45,7 @@ const ProductsPage = () => {
 
         <main className="col-span-1 md:col-span-2">
           <ProductCard
+          search={search} 
             
           />
         </main>
