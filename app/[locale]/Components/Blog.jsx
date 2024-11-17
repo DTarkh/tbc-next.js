@@ -1,7 +1,7 @@
 import "./Blog.css";
 import { Link } from "../../../i18n/routing";
 
-const Blog = ({ blog, onDelete, onEdit }) => {
+const Blog = ({ blog }) => {
   return (
     <div className="blog-container">
       <h2 className="blog-title">{blog.title}</h2>
@@ -20,12 +20,12 @@ const Blog = ({ blog, onDelete, onEdit }) => {
         <Link href={`/blog/${blog.id}`}>
           <button className="blog-button">Read more</button>
         </Link>
-        <button className="blog-delete-button" onClick={() => onDelete(blog.id)}>
+        {/* <button className="blog-delete-button" onClick={() => onDelete(blog.id)}>
           Delete
         </button>
         <button className="blog-add-button" onClick={() => onEdit(blog.id)}>
           Edit
-        </button>
+        </button> */}
       </div>
     </div>
   );
