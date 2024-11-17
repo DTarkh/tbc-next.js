@@ -2,10 +2,11 @@
 // import AddProduct from "../../Components/AddProduct";
 import ProductCard from "../../Components/ProductList";
 import NavPanel from "../../Components/NavPanel";
-import useProducts from "../../Components/hooks/useProducts";
+
 
 const ProductsPage = () => {
-  const { products } = useProducts();
+ 
+
  
   // const [currentProduct, setCurrentProduct] = useState([]);
   // const [active, setActive] = useState(false);
@@ -42,7 +43,7 @@ const ProductsPage = () => {
 
         <main className="col-span-1 md:col-span-2">
           <ProductCard
-            products={products}
+            
           />
         </main>
       </div>

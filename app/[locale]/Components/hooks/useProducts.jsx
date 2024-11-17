@@ -17,7 +17,7 @@ const fetchProducts = async (sortBy, sortOrder, search) => {
     const response = await fetch(`https://dummyjson.com/products`);
     const data = await response.json();
 
-    console.log(data.products)
+
     return data.products;
   }
 };
