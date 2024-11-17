@@ -2,14 +2,15 @@
 // import AddProduct from "../../Components/AddProduct";
 import ProductCard from "../../Components/ProductList";
 import NavPanel from "../../Components/NavPanel";
+import fetchProducts from "../../Components/hooks/useProducts";
 
 
-const ProductsPage = ({searchParams}) => {
-  const { search } = searchParams;
+const ProductsPage = async ({searchParams}) => {
+  const { search } = await searchParams;
   console.log('onpage' , search);
- 
+  
 
- 
+  const products = await fetchProducts(search);
   // const [currentProduct, setCurrentProduct] = useState([]);
   // const [active, setActive] = useState(false);
   // const [isActive, setIsActive] = useState(false);
@@ -45,8 +46,8 @@ const ProductsPage = ({searchParams}) => {
 
         <main className="col-span-1 md:col-span-2">
           <ProductCard
-          search={search} 
-            
+          products={products}
+         
           />
         </main>
       </div>

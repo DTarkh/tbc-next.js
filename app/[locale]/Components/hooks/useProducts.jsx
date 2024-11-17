@@ -1,4 +1,4 @@
-const fetchProducts = async (sortBy, sortOrder, search) => {
+const fetchProducts = async (search, sortBy, sortOrder ) => {
   if (search) {
     const response = await fetch(
       `https://dummyjson.com/products/search?q=${search}`

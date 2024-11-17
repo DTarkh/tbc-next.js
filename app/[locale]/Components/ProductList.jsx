@@ -2,9 +2,9 @@ import { Link } from "../../../i18n/routing";
 import "./ProductList.css";
 import fetchProducts from "./hooks/useProducts";
 
-const ProductCard = async ( {search} ) => {
-  console.log('onCard', search);
-  const products = await fetchProducts(search);
+const ProductCard = async ({products}) => {
+  // console.log('onCard', search);
+  // const products = await fetchProducts(search);
   
 
   // const onDelete = (id) => {
