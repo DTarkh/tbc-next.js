@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import useDebounce from "./hooks/useDebounce";
 
@@ -13,9 +13,9 @@ const Search = () => {
     setValue(event.target.value);
   };
 
-  // useEffect(() => {
-  //   router.push(`/products?search=${debounce}`);
-  // }, [debounce, router]);
+  useEffect(() => {
+    router.push(`/products?search=${debounce}`);
+  }, [debounce, router]);
 
   return (
     <div>

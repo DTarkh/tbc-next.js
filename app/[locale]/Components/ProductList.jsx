@@ -2,23 +2,18 @@ import { Link } from "../../../i18n/routing";
 import "./ProductList.css";
 // import fetchProducts from "./hooks/useProducts";
 
-const ProductCard = ({
-  products,
-  setProducts,
-  setCurrentProduct,
-  setActive,
-}) => {
-  // const products = await fetchProducts(sortBy, sortOrder, search);
+const ProductCard = async({ products }) => {
+ 
 
-  const onDelete = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
-  };
+  // const onDelete = (id) => {
+  //   setProducts(products.filter((product) => product.id !== id));
+  // };
 
-  const onUpdate = (id) => {
-    setCurrentProduct(products.find((product) => product.id === id));
-    console.log("Update", id);
-    setActive(true);
-  };
+  // const onUpdate = (id) => {
+  //   setCurrentProduct(products.find((product) => product.id === id));
+  //   console.log("Update", id);
+  //   setActive(true);
+  // };
 
   return (
     <div className="ProductList">
@@ -36,7 +31,7 @@ const ProductCard = ({
           </Link>
           <p className="ProductCard-rating">Rating: {product.rating}</p>
           <span className="ProductCard-price">Price: ${product.price}</span>
-          <div className="ProductCard-btns">
+          {/* <div className="ProductCard-btns">
             <button
               className="ProductCard-button-update"
               onClick={() => onUpdate(product.id)}
@@ -49,7 +44,7 @@ const ProductCard = ({
             >
               Delete
             </button>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>
