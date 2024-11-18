@@ -14,7 +14,6 @@ const ProductsPage = async (props: {
 }) => {
   const searchParams = await props.searchParams;
   const { search, sortBy, order } = await searchParams;
-  console.log("onpage", sortBy, order);
 
   const products: [ProductType] = await fetchProducts(search, sortBy, order);
   // const [currentProduct, setCurrentProduct] = useState([]);
