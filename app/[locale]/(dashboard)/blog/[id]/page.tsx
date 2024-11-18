@@ -1,6 +1,7 @@
 import "./singleBlog.css";
+import { BlogType } from "@/app/[locale]/interfaces";
 
-const Page = async ({ params }) => {
+const Page = async ({ params }: { params: BlogType }) => {
   const { id } = await params;
   const res = await fetch(`https://dummyjson.com/posts/${id}`);
   const post = await res.json();
@@ -25,7 +26,7 @@ const Page = async ({ params }) => {
             <span>👁️ {post.views} views</span>
           </div>
           <div className="blog-tags">
-            {post.tags.map((tag, index) => (
+            {post.tags.map((tag: string, index: number) => (
               <span key={index} className="tag">
                 {tag}
               </span>
