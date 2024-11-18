@@ -8,10 +8,6 @@ import Image from "next/image";
 const HomePage = () => {
   const t = useTranslations("HomePage");
   return (
-    
-
-
-    
     <div className=" md:flex md:items-center md:justify-between w-full pl-[10%] pr-[10%]">
       <div className="md:w-1/2 space-y-4">
         <h1 className=" text-[#FCA311] dark:text-[#ff9900] text-7xl font-bold">
