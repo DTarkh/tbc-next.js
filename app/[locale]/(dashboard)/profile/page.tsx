@@ -8,8 +8,6 @@ import { log } from "node:console";
 const UserPage = () => {
   const { userData, error } = useProfile();
 
-  console.log(userData?.image);
-
   return (
     <>
       {error && <p className="error-message">{error}</p>}
@@ -18,9 +16,9 @@ const UserPage = () => {
           <Image
             src={userData.image}
             alt={`${userData.firstName} ${userData.lastName}`}
-            className="user-image"
             width={100}
             height={100}
+            className="user-image"
           />
           <h2>
             {userData.firstName} {userData.lastName}
