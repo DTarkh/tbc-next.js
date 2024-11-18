@@ -9,7 +9,9 @@ const Search = () => {
   const [value, setValue] = useState("");
   const debounce = useDebounce(value, 1000);
 
-  const handleChange = (event) => {
+  type ChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  const handleChange: ChangeHandler = (event) => {
     setValue(event.target.value);
   };
 
