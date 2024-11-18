@@ -3,19 +3,27 @@
 import ProductCard from "../../Components/ProductList";
 import NavPanel from "../../Components/NavPanel";
 import fetchProducts from "../../Components/hooks/useProducts";
+import { ProductType } from "../../interfaces";
 
-const ProductsPage = async ({ searchParams }) => {
+type Params = Promise<{ slug: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+const ProductsPage = async (props: {
+  params: Params;
+  searchParams: SearchParams;
+}) => {
+  const searchParams = await props.searchParams;
   const { search, sortBy, order } = await searchParams;
   console.log("onpage", sortBy, order);
 
-  const products = await fetchProducts(search, sortBy, order);
+  const products: [ProductType] = await fetchProducts(search, sortBy, order);
   // const [currentProduct, setCurrentProduct] = useState([]);
   // const [active, setActive] = useState(false);
   // const [isActive, setIsActive] = useState(false);
 
-  const onAdd = () => {
-    setIsActive(true);
-  };
+  // const onAdd = () => {
+  //   setIsActive(true);
+  // };
 
   return (
     <>
@@ -39,7 +47,7 @@ const ProductsPage = async ({ searchParams }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 p-5">
         <aside className="col-span-1 md:col-span-1">
-          <NavPanel sortBy={sortBy} order={order} />
+          <NavPanel />
         </aside>
 
         <main className="col-span-1 md:col-span-2">

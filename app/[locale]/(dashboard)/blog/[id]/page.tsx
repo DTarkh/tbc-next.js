@@ -1,7 +1,11 @@
 import "./singleBlog.css";
 import { BlogType } from "@/app/[locale]/interfaces";
 
-const Page = async ({ params }: { params: BlogType }) => {
+type Params = Promise<{ id: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+const Page = async (props: { params: Params; searchParams: SearchParams }) => {
+  const params = await props.params;
   const { id } = await params;
   const res = await fetch(`https://dummyjson.com/posts/${id}`);
   const post = await res.json();
