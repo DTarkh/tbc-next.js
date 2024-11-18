@@ -14,7 +14,10 @@ const Search = () => {
   };
 
   useEffect(() => {
-    router.push(`/products?search=${debounce}`);
+    if (debounce.length > 0) {
+      router.push(`/products?search=${debounce}`);
+
+    }
   }, [debounce, router]);
 
   return (
