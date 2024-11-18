@@ -7,8 +7,8 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 const Page = async (props: { params: Params; searchParams: SearchParams }) => {
   const params = await props.params;
   const { id } = await params;
-  const res = await fetch(`https://dummyjson.com/posts/${id}`);
-  const post = await res.json();
+  const res: Response = await fetch(`https://dummyjson.com/posts/${id}`);
+  const post: BlogType = await res.json();
 
   return (
     <>

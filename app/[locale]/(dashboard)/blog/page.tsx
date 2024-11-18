@@ -6,8 +6,8 @@ import { BlogType } from "../../interfaces";
 import LoadingSpinner from "../../Components/Spinner";
 
 const BlogPage = async () => {
-  const res = await fetch("https://dummyjson.com/posts");
-  const { posts } = await res.json();
+  const res: Response = await fetch("https://dummyjson.com/posts");
+  const { posts }: { posts: [BlogType] } = await res.json();
   // const { posts, loading, setPosts } = useBlog();
 
   // const [active, setActive] = useState(false)
