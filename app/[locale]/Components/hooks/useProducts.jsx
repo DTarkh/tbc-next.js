@@ -1,25 +1,18 @@
-const fetchProducts = async (search, sortBy, sortOrder ) => {
+const fetchProducts = async (search, sortBy, sortOrder) => {
+  let response;
+
   if (search) {
-    const response = await fetch(
-      `https://dummyjson.com/products/search?q=${search}`
-    );
-    const data = await response.json();
-   
-    return data.products;
+    response = await fetch(`http://localhost:3000/api/products?search=${search}`);
   } else if (sortBy && sortOrder) {
-    const response = await fetch(
-      `https://dummyjson.com/products?sortBy=${sortBy}&order=${sortOrder}`
-    );
-    const data = await response.json();
-
-    return data.products;
+    response = await fetch(`http://localhost:3000/api/products?sortBy=${sortBy}&order=${sortOrder}`);
   } else {
-    const response = await fetch(`https://dummyjson.com/products`);
-    const data = await response.json();
-
-
-    return data.products;
+    response = await fetch(`http://localhost:3000/api/products`);
   }
+
+  const data = await response.json();
+  return data;
 };
 
 export default fetchProducts;
+
+
