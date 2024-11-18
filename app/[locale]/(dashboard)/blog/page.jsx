@@ -8,20 +8,18 @@ const BlogPage = async () => {
   const res = await fetch("https://dummyjson.com/posts");
   const { posts } = await res.json();
   // const { posts, loading, setPosts } = useBlog();
-  
 
-// const [active, setActive] = useState(false)
-// const [currentPost, setCurrentPost] = useState()
+  // const [active, setActive] = useState(false)
+  // const [currentPost, setCurrentPost] = useState()
 
-// const onDelete = (id) => {
-//   setPosts(posts.filter(post => post.id !== id))
-// }
+  // const onDelete = (id) => {
+  //   setPosts(posts.filter(post => post.id !== id))
+  // }
 
-// const onEdit = (id) => {
-//   setActive(true)
-//   setCurrentPost(posts.find((post) => post.id === id))
-// }
-
+  // const onEdit = (id) => {
+  //   setActive(true)
+  //   setCurrentPost(posts.find((post) => post.id === id))
+  // }
 
   return (
     <>

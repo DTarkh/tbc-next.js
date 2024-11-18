@@ -4,7 +4,6 @@ import Button from "../../Components/Button";
 import image from "@/public/images/cart.jpg";
 import Image from "next/image";
 
-
 const HomePage = () => {
   const t = useTranslations("HomePage");
   return (
@@ -32,7 +31,6 @@ const HomePage = () => {
         />
       </div>
     </div>
-    
   );
 };
 
