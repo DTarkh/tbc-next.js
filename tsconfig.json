@@ -30,7 +30,8 @@
     ".next/types/**/*.ts",
     "app/[locale]/(dashboard)/blog/page.jsx",
     "app/[locale]/Components/EditPost.jsx",
-    "app/[locale]/Components/EditWindow.jsx"
+    "app/[locale]/Components/EditWindow.jsx",
+    "app/[locale]/Components/SingleProduct.jsx"
   ],
   "exclude": ["node_modules"]
 }
