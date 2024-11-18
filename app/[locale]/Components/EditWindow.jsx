@@ -10,19 +10,18 @@ const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
     event.preventDefault();
 
     const updatedProducts = products.map((product) =>
-        product.id === currentProduct.id
-          ? {
-              ...product,
-              title: title,
-              rating: rating,
-              price: price,
-              
-            }
-          : product
-      );
-   
-      // Update the products state
-      setProducts(updatedProducts);
+      product.id === currentProduct.id
+        ? {
+            ...product,
+            title: title,
+            rating: rating,
+            price: price,
+          }
+        : product
+    );
+
+    // Update the products state
+    setProducts(updatedProducts);
 
     setActive(false);
   };
@@ -39,7 +38,6 @@ const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              
             />
           </label>
           <label className="product-form-label">
@@ -49,7 +47,6 @@ const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
               type="number"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
-             
             />
           </label>
           <label className="product-form-label">
@@ -59,7 +56,6 @@ const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              
             />
           </label>
           <button className="product-form-button" type="submit">

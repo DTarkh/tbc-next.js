@@ -28,6 +28,7 @@ const HomePage = () => {
           width={700}
           height={800}
           className="w-full h-[50vh] rounded-lg shadow-lg object-cover"
+          priority
         />
       </div>
     </div>
