@@ -2,20 +2,23 @@ import "./AddProduct.css";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-
-
-
 const AddProduct = ({ setIsActive, products, setProducts }) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const image = "https://archive.org/download/placeholder-image/placeholder-image.jpg"
+  const image =
+    "https://archive.org/download/placeholder-image/placeholder-image.jpg";
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newProduct = { id: uuidv4(), title: title, price: price, rating: 4.96, discountPercentage
-      : 10, 
-      thumbnail: image};
+    const newProduct = {
+      id: uuidv4(),
+      title: title,
+      price: price,
+      rating: 4.96,
+      discountPercentage: 10,
+      thumbnail: image,
+    };
     console.log(newProduct);
     setProducts([newProduct, ...products]);
     setIsActive(false);
