@@ -1,7 +1,8 @@
 import "./Blog.css";
 import { Link } from "../../../i18n/routing";
+import { BlogType } from "../interfaces";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog }: { blog: BlogType }) => {
   return (
     <div className="blog-container">
       <h2 className="blog-title">{blog.title}</h2>
@@ -16,7 +17,7 @@ const Blog = ({ blog }) => {
         <div className="blog-views">
           <span>👁️ {blog.views} views</span>
         </div>
-        
+
         <Link href={`/blog/${blog.id}`}>
           <button className="blog-button">Read more</button>
         </Link>
