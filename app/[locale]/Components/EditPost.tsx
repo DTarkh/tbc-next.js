@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./EditPost.css";
+import { BlogType } from "../interfaces";
 
-const EditPost = ({ setPosts, posts, currentPost, setActive }) => {
+type EditPostProps = {
+  posts: BlogType[];
+  setPosts: (posts: BlogType[]) => void;
+  currentPost: BlogType;
+  setActive: (active: boolean) => void;
+};
+
+const EditPost: React.FC<EditPostProps> = ({
+  setPosts,
+  posts,
+  currentPost,
+  setActive,
+}) => {
   const [title, setTitle] = useState(currentPost.title);
   const [body, setBody] = useState(currentPost.body);
 
-  const handleSave = (e) => {
+  const handleSave = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setActive(false);
 
-    const updatedPost = posts.map((post) =>
+    const updatedPost = posts.map((post: BlogType) =>
       post.id === currentPost.id ? { ...post, title: title, body: body } : post
     );
 
@@ -40,7 +53,7 @@ const EditPost = ({ setPosts, posts, currentPost, setActive }) => {
               value={body}
               onChange={(e) => setBody(e.target.value)}
               className="edit-textarea-field"
-              rows="5"
+              rows={5}
             />
           </label>
           <div className="edit-form-buttons">
