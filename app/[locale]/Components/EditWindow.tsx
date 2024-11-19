@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./EditWindow.css";
+import { ProductType } from "../interfaces";
 
-const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
+type EditWindow = {
+  products: ProductType[];
+  setProducts: (products: ProductType[]) => void;
+  currentProduct: ProductType;
+  setActive: (active: boolean) => void;
+};
+
+const EditWindow: React.FC<EditWindow> = ({
+  products,
+  setProducts,
+  currentProduct,
+  setActive,
+}) => {
   const [title, setTitle] = useState(currentProduct.title);
   const [rating, setRating] = useState(currentProduct.rating);
   const [price, setPrice] = useState(currentProduct.price);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const updatedProducts = products.map((product) =>
+    const updatedProducts = products.map((product: ProductType) =>
       product.id === currentProduct.id
         ? {
             ...product,
@@ -46,7 +59,7 @@ const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
               className="product-form-input"
               type="number"
               value={rating}
-              onChange={(e) => setRating(e.target.value)}
+              onChange={(e) => setRating(Number(e.target.value))}
             />
           </label>
           <label className="product-form-label">
@@ -55,7 +68,7 @@ const EditWindow = ({ products, setProducts, currentProduct, setActive }) => {
               className="product-form-input"
               type="number"
               value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => setPrice(Number(e.target.value))}
             />
           </label>
           <button className="product-form-button" type="submit">
