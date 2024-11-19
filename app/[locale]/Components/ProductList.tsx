@@ -1,11 +1,11 @@
 import { Link } from "../../../i18n/routing";
 import "./ProductList.css";
 import fetchProducts from "./hooks/useProducts";
+import { ProductType } from "../interfaces";
 
-const ProductCard = async ({products}) => {
+const ProductCard = async ({ products }: { products: [ProductType] }) => {
   // console.log('onCard', search);
   // const products = await fetchProducts(search);
-  
 
   // const onDelete = (id) => {
   //   setProducts(products.filter((product) => product.id !== id));
@@ -19,7 +19,7 @@ const ProductCard = async ({products}) => {
 
   return (
     <div className="ProductList">
-      {products.map((product) => (
+      {products.map((product: ProductType) => (
         <div className="ProductCard" key={product.id}>
           <div className="card-image">
             <img src={product.thumbnail} alt={product.title} />
