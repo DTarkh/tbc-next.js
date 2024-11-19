@@ -1,14 +1,33 @@
 import "./AddProduct.css";
-import { useState } from "react";
+import { ChangeEvent, ReactHTMLElement, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const AddProduct = ({ setIsActive, products, setProducts }) => {
+interface NewProduct {
+  id: string;
+  title: string;
+  price: string;
+  rating: number;
+  discountPercentage: number;
+  thumbnail: string;
+}
+
+interface AddProductProps {
+  setIsActive: (isActive: boolean) => void;
+  products: NewProduct[];
+  setProducts: (products: NewProduct[]) => void;
+}
+
+const AddProduct: React.FC<AddProductProps> = ({
+  setIsActive,
+  products,
+  setProducts,
+}) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const image =
     "https://archive.org/download/placeholder-image/placeholder-image.jpg";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newProduct = {
