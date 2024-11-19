@@ -1,21 +1,7 @@
 import "./AddProduct.css";
 import { ChangeEvent, ReactHTMLElement, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
-interface NewProduct {
-  id: string;
-  title: string;
-  price: string;
-  rating: number;
-  discountPercentage: number;
-  thumbnail: string;
-}
-
-interface AddProductProps {
-  setIsActive: (isActive: boolean) => void;
-  products: NewProduct[];
-  setProducts: (products: NewProduct[]) => void;
-}
+import { AddProductProps } from "../interfaces";
 
 const AddProduct: React.FC<AddProductProps> = ({
   setIsActive,
