@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   images: {
     domains: ["dummyjson.com"],
+    domains: ['i.postimg.cc']
   },
 };
 

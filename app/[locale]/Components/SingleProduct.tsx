@@ -2,7 +2,11 @@ import Image from "next/image";
 import { ProductType } from "../interfaces";
 import "./SingleProduct.css";
 
+
 const SingleProduct = ({ product }: { product: ProductType }) => {
+
+
+
   return (
     <>
       <div className="product-details-container" key={product.id}>

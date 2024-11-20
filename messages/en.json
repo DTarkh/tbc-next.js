@@ -8,6 +8,12 @@
     "description": "This is where you can find the latest updates and features. Enjoy browsing!",
     "button": "Learn More!"
   },
+  "ProductCard": {
+    "discount": "off",
+    "deal": "Limited Deal",
+    "rating": "Rating:",
+    "price": "Price:"
+  },
   
 
   "Navigation": {

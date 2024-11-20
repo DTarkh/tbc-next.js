@@ -4,8 +4,8 @@ import { createClient } from '@/utils/supabase/server';
 export const GET = async (req:NextRequest) => {
 
   const supabase = await createClient();
-  const { data, error } = await supabase.from('products').select();
-  console.log(data);
+  const { data, error } = await supabase.from('products_multilang').select();
+  
 
 
     // const { searchParams } = new URL(req.url); 

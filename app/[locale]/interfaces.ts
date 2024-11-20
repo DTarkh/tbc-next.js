@@ -13,9 +13,12 @@ export interface BlogType {
 
 export interface ProductType {
   id: number;
-  title: string;
-  description: string;
-  category: string;
+  title_en: string;
+  title_ge: string;
+  description_en: string;
+  description_ge: string;
+  category_en: string;
+  category_ge: string;
   price: number;
   discountPercentage: number;
   rating: number;

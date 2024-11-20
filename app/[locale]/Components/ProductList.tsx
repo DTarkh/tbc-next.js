@@ -1,9 +1,18 @@
-import { Link } from "../../../i18n/routing";
-import "./ProductList.css";
-import fetchProducts from "./hooks/useProducts";
-import { ProductType } from "../interfaces";
+'use client'
 
-const ProductCard = async ({ products }: { products: [ProductType] }) => {
+import { Link } from "@/i18n/routing";
+import "./ProductList.css";
+import { ProductType } from "../interfaces";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+
+
+
+
+
+
+
+const ProductCard = ({ products}: { products: [ProductType] } ) => {
   // console.log('onCard', search);
   // const products = await fetchProducts(search);
 
@@ -17,22 +26,29 @@ const ProductCard = async ({ products }: { products: [ProductType] }) => {
   //   setActive(true);
   // };
 
+  const t = useTranslations("ProductCard");
+const path = usePathname()
+const isEnglish = path.includes('/en'); 
+const isGeorgian = path.includes('/ka'); 
+
+
+
   return (
     <div className="ProductList">
       {products.map((product: ProductType) => (
         <div className="ProductCard" key={product.id}>
           <div className="card-image">
-            <img src={product.thumbnail} alt={product.title} />
+            <img src={product.thumbnail} alt={isEnglish ? product.title_en : product.title_ge} />
           </div>
           <p className="ProductCard-discount">
-            {product.discountPercentage}% off
-            <span className="limited-deal">Limited Deal</span>
+            {product.discountPercentage}% {t('discount')}
+            <span className="limited-deal">{t('deal')}</span>
           </p>
           <Link href={`/products/${product.id}`}>
-            <h2 className="ProductCard-title">{product.title}</h2>
+            <h2 className="ProductCard-title">{isEnglish ? product.title_en : product.title_ge}</h2>
           </Link>
-          <p className="ProductCard-rating">Rating: {product.rating}</p>
-          <span className="ProductCard-price">Price: ${product.price}</span>
+          <p className="ProductCard-rating">{t('rating')}{product.rating}</p>
+          <span className="ProductCard-price">{t('price')} ${product.price}</span>
           {/* <div className="ProductCard-btns">
             <button
               className="ProductCard-button-update"
