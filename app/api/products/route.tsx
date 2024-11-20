@@ -1,21 +1,28 @@
 import { NextRequest } from "next/server";
+import { createClient } from '@/utils/supabase/server';
 
 export const GET = async (req:NextRequest) => {
-    const { searchParams } = new URL(req.url); 
-    const searchQuery = searchParams.get("search"); 
-    const sortQuery = searchParams.get("sortBy"); 
-    const orderQuery = searchParams.get("order"); 
+
+  const supabase = await createClient();
+  const { data, error } = await supabase.from('products').select();
+  console.log(data);
+
+
+    // const { searchParams } = new URL(req.url); 
+    // const searchQuery = searchParams.get("search"); 
+    // const sortQuery = searchParams.get("sortBy"); 
+    // const orderQuery = searchParams.get("order"); 
   
-    let data;
+    // let data;
   
-    if (searchQuery) {
-      data = await fetch(`https://dummyjson.com/products/search?q=${searchQuery}`);
-    } else if (sortQuery && orderQuery) {
-      data = await fetch(`https://dummyjson.com/products?sortBy=${sortQuery}&order=${orderQuery}`);
-    } else {
-      data = await fetch("https://dummyjson.com/products");}
+    // if (searchQuery) {
+    //   data = await fetch(`https://dummyjson.com/products/search?q=${searchQuery}`);
+    // } else if (sortQuery && orderQuery) {
+    //   data = await fetch(`https://dummyjson.com/products?sortBy=${sortQuery}&order=${orderQuery}`);
+    // } else {
+    //   data = await fetch("https://dummyjson.com/products");}
   
-    const response = await data.json();
+    // const response = await data.json();
   
-    return Response.json(response.products);
+    return Response.json(data);
   };

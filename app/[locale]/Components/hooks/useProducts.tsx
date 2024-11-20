@@ -20,10 +20,10 @@ const fetchProducts = async (
 
     return data.products;
   } else {
-    const response = await fetch(`https://dummyjson.com/products`);
-    const data = await response.json();
+    const response = await fetch(`http://localhost:3000/api/products`);
+    const products = await response.json();
 
-    return data.products;
+    return products;
   }
 };
 
