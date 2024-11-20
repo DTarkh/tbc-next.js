@@ -10,8 +10,6 @@ export default function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition();
 
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    console.log(typeof e.target.value);
-
     const nextLocale = e.target.value;
     startTransition(() => {
       router.replace(`/${nextLocale}${pathname}`);
