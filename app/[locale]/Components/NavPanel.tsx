@@ -1,14 +1,16 @@
 "use client";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Search from "./Search";
 import { useRouter } from "next/navigation";
 
 const NavPanel = () => {
   const router = useRouter();
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const target = e.target.value;
-    const [sortBy, order] = target.split("-");
+    const selectedValue = e.target.value;
+    setSelectedValue(selectedValue);
+    const [sortBy, order] = selectedValue.split("-");
     router.push(`products?sortBy=${sortBy}&order=${order}`);
   };
 
@@ -33,10 +35,11 @@ const NavPanel = () => {
       <div className="mb-4">
         <h3 className="text-sm font-semibold text-gray-600 mb-2">Sort By</h3>
         <select
+          value={selectedValue}
           onChange={handleChange}
           className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         >
-          <option disabled selected>
+          <option value="" disabled>
             Price
           </option>
           <option value="price-asc">Price: Low to High</option>
@@ -46,7 +49,7 @@ const NavPanel = () => {
           onChange={handleChange}
           className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         >
-          <option disabled selected>
+          <option disabled value="">
             Discount
           </option>
           <option value="discount-desc">Discount: High to Low</option>
@@ -56,7 +59,7 @@ const NavPanel = () => {
           onChange={handleChange}
           className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         >
-          <option disabled selected>
+          <option disabled value="">
             Rating
           </option>
           <option value="rating-desc">Rating: High to Low</option>
