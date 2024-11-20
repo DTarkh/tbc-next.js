@@ -1,14 +1,16 @@
 "use client";
+import React, { ChangeEvent, useState } from "react";
 import Search from "./Search";
 import { useRouter } from "next/navigation";
-import { ChangeEvent } from "react";
 
 const NavPanel = () => {
   const router = useRouter();
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const target = e.target.value;
-    const [sortBy, order] = target.split("-");
+    const selectedValue = e.target.value;
+    setSelectedValue(selectedValue);
+    const [sortBy, order] = selectedValue.split("-");
     router.push(`products?sortBy=${sortBy}&order=${order}`);
   };
 
@@ -17,6 +19,14 @@ const NavPanel = () => {
       <h2 className="text-lg font-semibold text-gray-700 mb-4">
         Product Panel
       </h2>
+      {/* <div className="mb-4">
+        <button
+          className="w-full bg-[#4B0082] dark:bg-[#ff9900] dark:hover:bg-[#4B0082] text-white py-2 rounded-md hover:bg-[#ff9900] transition duration-200"
+          onClick={() => onAdd()}
+        >
+          Add Product
+        </button>
+      </div> */}
 
       <div className="mb-4">
         <Search />
@@ -25,35 +35,31 @@ const NavPanel = () => {
       <div className="mb-4">
         <h3 className="text-sm font-semibold text-gray-600 mb-2">Sort By</h3>
         <select
+          value={selectedValue}
           onChange={handleChange}
-          defaultValue="price"
           className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         >
-          <option disabled value="price">
+          <option value="" disabled>
             Price
           </option>
           <option value="price-asc">Price: Low to High</option>
           <option value="price-desc">Price: High to Low</option>
         </select>
-
         <select
           onChange={handleChange}
-          defaultValue="discount"
           className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         >
-          <option disabled value="discount">
+          <option disabled value="">
             Discount
           </option>
           <option value="discount-desc">Discount: High to Low</option>
           <option value="discount-asc">Discount: Low to High</option>
         </select>
-
         <select
           onChange={handleChange}
-          defaultValue="rating"
           className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         >
-          <option disabled value="rating">
+          <option disabled value="">
             Rating
           </option>
           <option value="rating-desc">Rating: High to Low</option>

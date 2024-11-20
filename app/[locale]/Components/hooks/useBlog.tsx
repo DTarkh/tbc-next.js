@@ -11,11 +11,11 @@ const useBlog = () => {
 
   useEffect(() => {
     axios.get(URL).then((response) => setPosts(response.data.posts));
-    
+
     setLoading(false);
   }, []);
 
-  return { posts, setPosts, loading}
+  return { posts, setPosts, loading };
 };
 
 export default useBlog;

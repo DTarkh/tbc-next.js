@@ -1,20 +1,20 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useTransition } from "react";
-import { usePathname } from "@/i18n/routing"
+import { ChangeEvent, useTransition } from "react";
+import { usePathname } from "@/i18n/routing";
 
 export default function LanguageSwitcher() {
   const router = useRouter();
-  const pathname = usePathname()
-  const [isPending, startTransition ] = useTransition()
+  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
 
-  const onSelectChange = (e) => {
+  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = e.target.value;
     startTransition(() => {
-    router.replace(`/${nextLocale}${pathname}`) }
-  )
-  }
+      router.replace(`/${nextLocale}${pathname}`);
+    });
+  };
   return (
     <select
       onChange={onSelectChange}

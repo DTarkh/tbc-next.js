@@ -56,3 +56,18 @@ interface MetaData {
   barcode: string;
   qrCode: string;
 }
+
+export interface NewProduct {
+  id: string;
+  title: string;
+  price: string;
+  rating: number;
+  discountPercentage: number;
+  thumbnail: string;
+}
+
+export interface AddProductProps {
+  setIsActive: (isActive: boolean) => void;
+  products: NewProduct[];
+  setProducts: (products: NewProduct[]) => void;
+}
