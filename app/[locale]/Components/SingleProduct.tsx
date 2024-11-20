@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProductType } from "../interfaces";
 import "./SingleProduct.css";
 
@@ -6,7 +7,12 @@ const SingleProduct = ({ product }: { product: ProductType }) => {
     <>
       <div className="product-details-container" key={product.id}>
         <div className="product-image">
-          <img src={product.thumbnail} alt="Product image" />
+          <Image
+            src={product.thumbnail}
+            alt="Product image"
+            width={100}
+            height={100}
+          />
         </div>
 
         <div className="product-info">

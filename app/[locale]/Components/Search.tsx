@@ -2,7 +2,6 @@
 
 import { useRouter } from "@/i18n/routing";
 import { useEffect, useState } from "react";
-import { ChangeEvent } from "react";
 import useDebounce from "./hooks/useDebounce";
 
 const Search = () => {
@@ -10,7 +9,9 @@ const Search = () => {
   const [value, setValue] = useState("");
   const debounce = useDebounce(value, 1000);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  type ChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  const handleChange: ChangeHandler = (event) => {
     setValue(event.target.value);
   };
 
@@ -25,7 +26,6 @@ const Search = () => {
         type="text"
         placeholder="Search Product"
         onChange={handleChange}
-        value={value}
       />
     </div>
   );

@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
+    "noImplicitAny": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -27,8 +28,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/[locale]/(dashboard)/products/page.tsx",
-    "app/[locale]/Components/Blog.jsx"
+    "app/[locale]/(dashboard)/blog/page.jsx",
+    "app/[locale]/Components/EditPost.tsx",
+    "app/[locale]/Components/EditWindow.tsx",
+    "app/[locale]/Components/SingleProduct.jsx"
   ],
   "exclude": ["node_modules"]
 }

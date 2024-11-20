@@ -5,7 +5,11 @@ import Footer from "../Components/Footer/Footer";
 import { useAuthCheck } from "../Components/hooks/useAuthCheck";
 import LoadingSpinner from "../Components/Spinner";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+const Layout = ({ children }: LayoutProps) => {
   const loading = useAuthCheck();
 
   if (loading) {
