@@ -29,15 +29,23 @@
 }
 
 .ProductCard-title {
-  font-size: 1.5rem;
+  padding-top: 5px;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #5D7194
+  color: #5D7194;
+  text-overflow: ellipsis;   
+  height: 80px;    
 }
 .ProductCard-title:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #C7511E
+  color: #C7511E;
+  white-space:initial;
+  overflow:visible;
+  text-overflow:initial;
+  
+  
 }
 
 .ProductCard-description {
@@ -236,4 +244,9 @@
 .ProductCard-btns{
   display: flex;
   justify-content: center;
+}
+
+.ProductCard-rating{
+  
+margin-bottom: 3px;
 }

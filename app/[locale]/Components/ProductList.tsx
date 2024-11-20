@@ -47,8 +47,11 @@ const isGeorgian = path.includes('/ka');
           <Link href={`/products/${product.id}`}>
             <h2 className="ProductCard-title">{isEnglish ? product.title_en : product.title_ge}</h2>
           </Link>
-          <p className="ProductCard-rating">{t('rating')}{product.rating}</p>
+          <div>
+
+          <p className="ProductCard-rating">{t('rating')} {product.rating}</p>
           <span className="ProductCard-price">{t('price')} ${product.price}</span>
+          </div>
           {/* <div className="ProductCard-btns">
             <button
               className="ProductCard-button-update"
