@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Link } from "@/i18n/routing";
 import "./ProductList.css";
@@ -6,13 +6,7 @@ import { ProductType } from "../interfaces";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-
-
-
-
-
-
-const ProductCard = ({ products}: { products: [ProductType] } ) => {
+const ProductCard = ({ products }: { products: [ProductType] }) => {
   // console.log('onCard', search);
   // const products = await fetchProducts(search);
 
@@ -27,30 +21,38 @@ const ProductCard = ({ products}: { products: [ProductType] } ) => {
   // };
 
   const t = useTranslations("ProductCard");
-const path = usePathname()
-const isEnglish = path.includes('/en'); 
-const isGeorgian = path.includes('/ka'); 
-
-
+  const path = usePathname();
+  const isEnglish = path.includes("/en");
 
   return (
     <div className="ProductList">
       {products.map((product: ProductType) => (
         <div className="ProductCard" key={product.id}>
           <div className="card-image">
-            <img src={product.thumbnail} alt={isEnglish ? product.title_en : product.title_ge} />
+            <img
+              src={product.thumbnail}
+              alt={isEnglish ? product.title_en : product.title_ge}
+            />
           </div>
           <p className="ProductCard-discount">
-            {product.discountPercentage}% {t('discount')}
-            <span className="limited-deal">{t('deal')}</span>
+            {product.discountPercentage}% {t("discount")}
+            <span className="limited-deal">{t("deal")}</span>
           </p>
           <Link href={`/products/${product.id}`}>
-            <h2 className="ProductCard-title">{isEnglish ? product.title_en : product.title_ge}</h2>
+            <h2 className="ProductCard-title">
+              {isEnglish ? product.title_en : product.title_ge}
+            </h2>
           </Link>
+          <p className="ProductCard-description">
+            {isEnglish ? product.description_en : product.description_ge}
+          </p>
           <div>
-
-          <p className="ProductCard-rating">{t('rating')} {product.rating}</p>
-          <span className="ProductCard-price">{t('price')} ${product.price}</span>
+            <p className="ProductCard-rating">
+              {t("rating")} {product.rating}
+            </p>
+            <span className="ProductCard-price">
+              {t("price")} ${product.price}
+            </span>
           </div>
           {/* <div className="ProductCard-btns">
             <button

@@ -12,7 +12,11 @@
     "discount": "off",
     "deal": "Limited Deal",
     "rating": "Rating:",
-    "price": "Price:"
+    "price": "Price:",
+    "category": "Category",
+    "stock": "Stock",
+    "brand": "Brand"
+
   },
   
 

@@ -19,8 +19,6 @@ export const GET = async (req: NextRequest, { params }: Props) => {
 
   if (error) {
     console.error('Error fetching row:', error);
-  } else {
-    console.log('Row data:', data);
   }
 
   return Response.json(data);

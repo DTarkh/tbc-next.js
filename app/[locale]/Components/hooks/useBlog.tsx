@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const URL = "https://dummyjson.com/posts";
+const URL = "http://localhost:3000/api/blog";
 
 const useBlog = () => {
   const [posts, setPosts] = useState([]);

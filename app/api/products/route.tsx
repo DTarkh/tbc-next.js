@@ -6,7 +6,9 @@ export const GET = async (req:NextRequest) => {
   const supabase = await createClient();
   const { data, error } = await supabase.from('products_multilang').select();
   
-
+  if (error) {
+    console.error('Error fetching row:', error);
+  } 
 
     // const { searchParams } = new URL(req.url); 
     // const searchQuery = searchParams.get("search"); 

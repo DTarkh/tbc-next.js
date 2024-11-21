@@ -3,14 +3,12 @@
 
 .product-details-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px; 
-    padding: 20px;
+    padding: 30px;
     max-width: 1200px;
-    margin: 0 auto;
     background-color:#F9F9F9;
     border-radius: 10px;
-    border: 1px solid grey
+    border: 1px solid grey;
+    gap:20px;
   }
   
  
@@ -48,7 +46,7 @@
 
   .product-meta {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction:column ;
     gap: 10px;
   }
   
