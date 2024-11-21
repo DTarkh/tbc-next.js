@@ -1,17 +1,27 @@
+'use client'
+
 import "./Blog.css";
 import { Link } from "../../../i18n/routing";
 import { BlogType } from "../interfaces";
+import { usePathname } from "next/navigation";
 
-const Blog = ({ blog }: { blog: BlogType }) => {
+interface BlogProps {
+  blog: BlogType;
+}
+const Blog = ({ blog } : BlogProps ) => {
+
+  const path = usePathname();
+  const isEnglish = path.includes("/en");
+
   return (
     <div className="blog-container">
-      <h2 className="blog-title">{blog.title}</h2>
-      <p className="blog-body">{blog.body}</p>
+      <h2 className="blog-title">{isEnglish ? blog.title_en : blog.title_ge}</h2>
+      <p className="blog-body">{isEnglish ? blog.body_en : blog.body_ge}</p>
 
       <div className="blog-meta">
         <div className="blog-reactions">
-          <span className="likes">👍 {blog.reactions.likes}</span>
-          <span className="dislikes">👎 {blog.reactions.dislikes}</span>
+          <span className="likes">👍 {blog.likes}</span>
+          <span className="dislikes">👎 {blog.dislikes}</span>
         </div>
 
         <div className="blog-views">

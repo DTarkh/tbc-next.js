@@ -13,7 +13,7 @@ const UserPage = () => {
       {error && <p className="error-message">{error}</p>}
       {userData ? (
         <div className="user-card">
-          <Image
+          <img
             src={userData.image}
             alt={`${userData.firstName} ${userData.lastName}`}
             width={100}

@@ -29,22 +29,36 @@
 }
 
 .ProductCard-title {
-  font-size: 1.5rem;
+  padding-top: 5px;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #5D7194
+  color: #5D7194;
+  text-overflow: ellipsis;   
+  height: 80px;    
 }
 .ProductCard-title:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #C7511E
+  color: #C7511E;
+  white-space:initial;
+  overflow:visible;
+  text-overflow:initial;
+  
+  
 }
 
 .ProductCard-description {
-  font-size: 1rem;
+  font-size:1rem;
   color: #555;
   margin-bottom: 15px;
-  width: 240px;      
+  display: -webkit-box;         /* Enables flexible box layout */
+  -webkit-box-orient: vertical; /* Specifies vertical orientation */
+  overflow: hidden;             /* Hides overflowing content */
+  text-overflow: ellipsis;      /* Adds ellipsis at the end */
+  -webkit-line-clamp: 2;        /* Limits text to 2 lines */
+  max-height: calc(1.2em * 2);  /* Adjust line height (1.2em) to match */
+  line-height: 1.2em;           /* Set line height to match `max-height` */
+  
 }
 
 .ProductCard-category {
@@ -74,7 +88,7 @@
   display: inline-block;      
   font-weight: bold;          
   font-size: 14px;   
-  width: 170px;      
+  width: 100%      
 }
 
 .limited-deal {
@@ -236,4 +250,9 @@
 .ProductCard-btns{
   display: flex;
   justify-content: center;
+}
+
+.ProductCard-rating{
+  
+margin-bottom: 3px;
 }

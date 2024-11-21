@@ -1,21 +1,26 @@
 export interface BlogType {
   id: number | string;
-  title: string;
-  body: string;
-  tags: string[];
-  reactions: {
-    likes: number;
-    dislikes: number;
-  };
+  title_en: string;
+  title_ge: string;
+  body_en: string;
+  body_ge: string;
+  category_en: string;
+  category_ge: string;
+  likes: number;
+  dislikes: number;
   views: number;
-  userId: number;
+  created_at: number;
+ 
 }
 
 export interface ProductType {
   id: number;
-  title: string;
-  description: string;
-  category: string;
+  title_en: string;
+  title_ge: string;
+  description_en: string;
+  description_ge: string;
+  category_en: string;
+  category_ge: string;
   price: number;
   discountPercentage: number;
   rating: number;
