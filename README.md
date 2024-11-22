@@ -1,35 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Online Shop Project
 
-## Getting Started
+This project is an online marketplace built using [Next.js](https://nextjs.org/). It features a modern, responsive design, allowing users to browse and purchase products seamlessly. The application includes functionalities such as product listing, search, shopping cart management, user authentication, and more.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **Product Listing**: Users can view all available products, including images, titles, descriptions, and prices.
+- **Search Functionality**: Users can search for products by title or filter by price range.
+- **Cart Management**: Users can add products to their cart and proceed to checkout.
+- **Admin Features**: Admin users can add, edit, or delete products from the product list.
+- **Blogs**: Users can browse and search various blog posts, with links to detailed pages.
+- **Responsive Design**: The application is fully responsive, ensuring an optimal viewing experience on devices of all sizes.
+- **User Authentication**: Users can register, log in, and manage their profiles.
+- **Language Switching**: Switch between English (EN) and Georgian (KA).
+- **Dark/Light Theme**: The app supports dark and light themes for improved user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting Started with Next.js
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project was bootstrapped with [Next.js](https://nextjs.org/).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Prerequisites
 
-## Learn More
+Before you begin, make sure you have the following installed:
 
-To learn more about Next.js, take a look at the following resources:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (or [Yarn](https://yarnpkg.com/))
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# tbc-next.js
+   ```bash
+   git clone https://github.com/your-username/online-shop-project.git
+   cd online-shop-project
