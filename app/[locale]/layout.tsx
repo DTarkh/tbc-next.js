@@ -8,16 +8,22 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto_Serif({ subsets: ["latin"] });
 
+type LocaleParams = {
+  locale: "en" | "ka";
+  [key: string]: string | number | undefined;
+};
+
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: any;
+  params: unknown;
 }) {
-  const { locale } = await params;
+  const resolvedParams = await params;
+  const { locale } = resolvedParams as LocaleParams;
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as "en" | "ka")) {
     notFound();
   }
 
