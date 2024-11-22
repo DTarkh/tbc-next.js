@@ -23,12 +23,12 @@ This project was bootstrapped with [Next.js](https://nextjs.org/).
 Before you begin, make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (or [Yarn](https://yarnpkg.com/))
+- [npm](https://www.npmjs.com/) 
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/online-shop-project.git
+   git clone git@github.com:DTarkh/tbc-next.js.git
    cd online-shop-project
