@@ -9,12 +9,12 @@ import { useEffect } from "react";
 import Menu from "../Components/Menu";
 
 const Layout = ({ children }) => {
-  const { user, isLoading } = useUser();
+  const { user, isLoading, error } = useUser();
   const router = useRouter();
 
   useEffect(() => {
     if (!isLoading && !user) {
-      router.push('/api/auth/login');
+      router.push(`http://localhost:3000/api/auth/login`)
     }
   }, [isLoading, user, router]);
 
